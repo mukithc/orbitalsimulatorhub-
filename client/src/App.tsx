@@ -1,4 +1,5 @@
 import { Route, Switch } from "wouter";
+import { Analytics } from "@vercel/analytics/react";
 import { NavigationHeader } from "./components/NavigationHeader";
 import { Footer } from "./components/Footer";
 import { SEOHead } from "./components/SEOHead";
@@ -128,6 +129,7 @@ function App() {
         </Switch>
       </main>
       <Footer />
+      <Analytics />
     </div>
   );
 }
