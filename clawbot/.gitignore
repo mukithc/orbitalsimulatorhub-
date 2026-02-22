@@ -1,0 +1,12 @@
+node_modules/
+.env
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+data/
+.DS_Store
+*.log
+public/posts/*.html
+!public/posts/.gitkeep

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clawbot Money Engine - Blog</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 0 auto; padding: 40px 20px; }
+    h1 { color: #f59e0b; }
+    a { color: #2563eb; }
+    ul { list-style: none; padding: 0; }
+    li { padding: 12px 0; border-bottom: 1px solid #e5e7eb; }
+  </style>
+</head>
+<body>
+  <h1>Clawbot Blog</h1>
+  <p>Affiliate marketing content - powered by Clawbot Money Engine.</p>
+  <ul id="posts"></ul>
+  <script>
+    fetch('/api/published-public').then(r => r.json()).then(data => {
+      document.getElementById('posts').innerHTML = data.map(p => 
+        '<li><a href="/posts/' + p.slug + '.html">' + p.slug + '</a></li>'
+      ).join('') || '<li>No posts yet.</li>';
+    }).catch(() => {
+      document.getElementById('posts').innerHTML = '<li>Loading...</li>';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clawbot Money Engine - Admin</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 20px; background: #0f0f12; color: #e4e4e7; }
+    h1 { color: #f59e0b; font-size: 1.5rem; }
+    h2 { color: #a1a1aa; font-size: 1.1rem; margin-top: 24px; }
+    nav { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+    nav a { color: #60a5fa; text-decoration: none; padding: 8px 16px; background: #27272a; border-radius: 6px; }
+    nav a:hover { background: #3f3f46; }
+    .card { background: #18181b; border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+    input, textarea, select, button { padding: 10px; border-radius: 6px; border: 1px solid #3f3f46; background: #27272a; color: #e4e4e7; margin: 4px; }
+    button { cursor: pointer; background: #f59e0b; color: #0f0f12; border: none; font-weight: 600; }
+    button:hover { background: #fbbf24; }
+    button.danger { background: #dc2626; color: white; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 10px; text-align: left; border-bottom: 1px solid #27272a; }
+    .status { display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 0.85rem; }
+    .status.on { background: #22c55e; color: #0f0f12; }
+    .status.off { background: #3f3f46; }
+    .log { font-family: monospace; font-size: 0.85rem; background: #0f0f12; padding: 12px; border-radius: 6px; overflow-x: auto; max-height: 300px; overflow-y: auto; }
+    .log-item { margin: 4px 0; }
+    .hidden { display: none; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+  </style>
+</head>
+<body>
+  <h1>🔥 Clawbot Money Engine</h1>
+  <p style="color:#a1a1aa;margin-top:0">Affiliate marketing automation • hub-depot.com</p>
+  <div class="card" style="background:linear-gradient(135deg,#27272a 0%,#18181b 100%);border:1px solid #f59e0b33">
+    <h2 style="margin-top:0">🚀 Quick Start</h2>
+    <p>Load sample affiliate programs & products to get started instantly.</p>
+    <button onclick="seedData()">Load Sample Data</button>
+    <span id="seedResult" style="margin-left:12px"></span>
+  </div>
+  <nav>
+    <a href="#programs">Affiliate Programs</a>
+    <a href="#links">Affiliate Links</a>
+    <a href="#products">Products</a>
+    <a href="#generate">Generate Content</a>
+    <a href="#posts">Posts</a>
+    <a href="#publish">Publish</a>
+    <a href="#auto">Auto Mode</a>
+    <a href="#logs">Logs</a>
+  </nav>
+
+  <div id="programs" class="card">
+    <h2>Add Affiliate Program</h2>
+    <form id="programForm">
+      <input name="name" placeholder="Program name" required>
+      <input name="commission" placeholder="Commission %">
+      <input name="affiliate_link" placeholder="Affiliate link" type="url">
+      <input name="notes" placeholder="Notes">
+      <button type="submit">Add Program</button>
+    </form>
+    <h2>Programs</h2>
+    <table id="programsTable"><tbody></tbody></table>
+  </div>
+
+  <div id="links" class="card">
+    <h2>Add Affiliate Link</h2>
+    <form id="linkForm">
+      <select name="program_id"><option value="">No program</option></select>
+      <input name="name" placeholder="Link name">
+      <input name="url" placeholder="URL" type="url" required>
+      <input name="notes" placeholder="Notes">
+      <button type="submit">Add Link</button>
+    </form>
+    <table id="linksTable"><tbody></tbody></table>
+  </div>
+
+  <div id="products" class="card">
+    <h2>Add Product</h2>
+    <form id="productForm">
+      <input name="title" placeholder="Title" required>
+      <textarea name="description" placeholder="Description" rows="2"></textarea>
+      <input name="image" placeholder="Image URL">
+      <input name="affiliate_link" placeholder="Affiliate link" type="url">
+      <input name="category" placeholder="Category">
+      <button type="submit">Add Product</button>
+    </form>
+    <table id="productsTable"><tbody></tbody></table>
+  </div>
+
+  <div id="generate" class="card">
+    <h2>Generate Content</h2>
+    <div class="grid">
+      <div>
+        <h3>Blog Post</h3>
+        <form id="blogForm">
+          <input name="topic" placeholder="Topic" required>
+          <input name="keywords" placeholder="Keywords (optional)">
+          <button type="submit">Generate</button>
+        </form>
+      </div>
+      <div>
+        <h3>Review</h3>
+        <form id="reviewForm">
+          <input name="product_title" placeholder="Product title" required>
+          <textarea name="product_description" placeholder="Description" rows="2"></textarea>
+          <button type="submit">Generate</button>
+        </form>
+      </div>
+      <div>
+        <h3>Top 10 List</h3>
+        <form id="top10Form">
+          <input name="topic" placeholder="Topic (e.g. Best Laptops)" required>
+          <input name="category" placeholder="Category">
+          <button type="submit">Generate</button>
+        </form>
+      </div>
+      <div>
+        <h3>Ad Copy</h3>
+        <form id="adcopyForm">
+          <input name="product_name" placeholder="Product name" required>
+          <input name="tone" placeholder="Tone (persuasive, casual)">
+          <button type="submit">Generate</button>
+        </form>
+      </div>
+    </div>
+    <p id="genResult"></p>
+  </div>
+
+  <div id="posts" class="card">
+    <h2>Posts</h2>
+    <button onclick="loadPosts()">Refresh</button>
+    <table id="postsTable"><tbody></tbody></table>
+  </div>
+
+  <div id="publish" class="card">
+    <h2>Publish</h2>
+    <button onclick="publishLatest()">Publish Latest Draft</button>
+    <button onclick="publishAll()">Publish All Drafts</button>
+    <h2>Published Files</h2>
+    <ul id="publishedList"></ul>
+  </div>
+
+  <div id="auto" class="card">
+    <h2>Auto Mode</h2>
+    <p>Runs every 6 hours: generate content, publish, push to GitHub.</p>
+    <span id="autoStatus" class="status off">OFF</span>
+    <button id="autoBtn" onclick="toggleAuto()">Enable Auto Mode</button>
+    <button onclick="runCycle()">Run Cycle Now</button>
+  </div>
+
+  <div id="logs" class="card">
+    <h2>Logs</h2>
+    <button onclick="loadLogs()">Refresh</button>
+    <div id="logsContent" class="log"></div>
+  </div>
+
+  <script>
+    const base = window.location.pathname.replace(/\/admin.*/, '') || '';
+    function api(path, opts = {}) {
+      return fetch(base + path, { credentials: 'include', ...opts }).then(r => r.json());
+    }
+
+    async function loadPrograms() {
+      const data = await api('/api/programs');
+      const tbody = document.getElementById('programsTable').querySelector('tbody');
+      tbody.innerHTML = data.map(p => `
+        <tr>
+          <td>${p.name}</td>
+          <td>${p.commission || '-'}</td>
+          <td><a href="${p.affiliate_link}" target="_blank" rel="nofollow">Link</a></td>
+          <td><button class="danger" onclick="delProgram(${p.id})">Delete</button></td>
+        </tr>
+      `).join('');
+      const sel = document.querySelector('#linkForm select[name="program_id"]');
+      sel.innerHTML = '<option value="">No program</option>' + data.map(p => `<option value="${p.id}">${p.name}</option>`).join('');
+    }
+
+    async function loadLinks() {
+      const data = await api('/api/links');
+      const tbody = document.getElementById('linksTable').querySelector('tbody');
+      tbody.innerHTML = data.map(l => `
+        <tr>
+          <td>${l.name || '-'}</td>
+          <td><a href="${l.url}" target="_blank" rel="nofollow">${l.url.slice(0,40)}...</a></td>
+          <td><button class="danger" onclick="delLink(${l.id})">Delete</button></td>
+        </tr>
+      `).join('');
+    }
+
+    async function loadProducts() {
+      const data = await api('/api/products');
+      const tbody = document.getElementById('productsTable').querySelector('tbody');
+      tbody.innerHTML = data.map(p => `
+        <tr>
+          <td>${p.title}</td>
+          <td>${p.category || '-'}</td>
+          <td><button class="danger" onclick="delProduct(${p.id})">Delete</button></td>
+        </tr>
+      `).join('');
+    }
+
+    async function loadPosts() {
+      const data = await api('/api/posts');
+      const tbody = document.getElementById('postsTable').querySelector('tbody');
+      tbody.innerHTML = data.map(p => `
+        <tr>
+          <td>${p.title}</td>
+          <td>${p.content_type}</td>
+          <td><span class="status ${p.status}">${p.status}</span></td>
+          <td>${p.created_at}</td>
+        </tr>
+      `).join('');
+    }
+
+    async function loadPublished() {
+      const data = await api('/api/published');
+      document.getElementById('publishedList').innerHTML = data.map(f => 
+        `<li><a href="${base}/posts/${f.slug}.html" target="_blank">${f.filename}</a></li>`
+      ).join('');
+    }
+
+    async function loadAutoMode() {
+      const { auto_mode } = await api('/api/auto-mode');
+      const status = document.getElementById('autoStatus');
+      const btn = document.getElementById('autoBtn');
+      status.textContent = auto_mode ? 'ON' : 'OFF';
+      status.className = 'status ' + (auto_mode ? 'on' : 'off');
+      btn.textContent = auto_mode ? 'Disable Auto Mode' : 'Enable Auto Mode';
+    }
+
+    async function loadLogs() {
+      const data = await api('/api/logs?limit=50');
+      document.getElementById('logsContent').innerHTML = data.map(l => 
+        `<div class="log-item">[${l.level}] ${l.created_at} ${l.message}</div>`
+      ).join('');
+    }
+
+    document.getElementById('programForm').onsubmit = async (e) => {
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      await api('/api/programs', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(Object.fromEntries(fd)) });
+      loadPrograms(); loadLinks(); e.target.reset();
+    };
+
+    document.getElementById('linkForm').onsubmit = async (e) => {
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      const body = Object.fromEntries(fd);
+      body.program_id = body.program_id ? parseInt(body.program_id) : null;
+      await api('/api/links', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+      loadLinks(); e.target.reset();
+    };
+
+    document.getElementById('productForm').onsubmit = async (e) => {
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      await api('/api/products', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(Object.fromEntries(fd)) });
+      loadProducts(); e.target.reset();
+    };
+
+    async function submitGen(formId, path, msg) {
+      const form = document.getElementById(formId);
+      const fd = new FormData(form);
+      document.getElementById('genResult').textContent = 'Generating...';
+      try {
+        const res = await api(path, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(Object.fromEntries(fd)) });
+        document.getElementById('genResult').textContent = res.success ? msg + ' Created: ' + res.slug : res.error || 'Error';
+        if (res.success) loadPosts();
+      } catch (e) {
+        document.getElementById('genResult').textContent = 'Error: ' + e.message;
+      }
+    }
+
+    document.getElementById('blogForm').onsubmit = (e) => { e.preventDefault(); submitGen('blogForm', '/api/generate/blog', 'Blog post'); };
+    document.getElementById('reviewForm').onsubmit = (e) => { e.preventDefault(); submitGen('reviewForm', '/api/generate/review', 'Review'); };
+    document.getElementById('top10Form').onsubmit = (e) => { e.preventDefault(); submitGen('top10Form', '/api/generate/top10', 'Top 10'); };
+    document.getElementById('adcopyForm').onsubmit = async (e) => {
+      e.preventDefault();
+      const form = document.getElementById('adcopyForm');
+      const fd = new FormData(form);
+      document.getElementById('genResult').textContent = 'Generating...';
+      const res = await api('/api/generate/adcopy', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(Object.fromEntries(fd)) });
+      document.getElementById('genResult').innerHTML = res.success ? '<strong>Ad copies:</strong><br>' + res.copies.map(c => `"${c}"`).join('<br>') : res.error;
+    };
+
+    async function delProgram(id) { await api('/api/programs/' + id, { method: 'DELETE' }); loadPrograms(); loadLinks(); }
+    async function delLink(id) { await api('/api/links/' + id, { method: 'DELETE' }); loadLinks(); }
+    async function delProduct(id) { await api('/api/products/' + id, { method: 'DELETE' }); loadProducts(); }
+
+    async function publishLatest() {
+      const res = await api('/api/publish', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({}) });
+      alert(res.success ? 'Published: ' + (res.result?.slug || 'OK') : res.error);
+      loadPosts(); loadPublished();
+    }
+
+    async function publishAll() {
+      const res = await api('/api/publish', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ all: true }) });
+      alert(res.success ? 'Published ' + res.results?.length + ' posts' : res.error);
+      loadPosts(); loadPublished();
+    }
+
+    async function toggleAuto() {
+      const { auto_mode } = await api('/api/auto-mode');
+      await api('/api/auto-mode', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ on: !auto_mode }) });
+      loadAutoMode();
+    }
+
+    async function runCycle() {
+      document.getElementById('autoBtn').disabled = true;
+      try {
+        const res = await api('/api/auto-cycle', { method: 'POST' });
+        alert(res.success ? 'Cycle completed' : res.error);
+        loadLogs(); loadPosts(); loadPublished();
+      } finally {
+        document.getElementById('autoBtn').disabled = false;
+      }
+    }
+
+    async function seedData() {
+      document.getElementById('seedResult').textContent = 'Loading...';
+      const res = await api('/api/seed', { method: 'POST' });
+      document.getElementById('seedResult').textContent = res.success ? '✓ ' + res.message : res.error;
+      if (res.success) { loadPrograms(); loadLinks(); loadProducts(); }
+    }
+
+    loadPrograms(); loadLinks(); loadProducts(); loadPosts(); loadPublished(); loadAutoMode(); loadLogs();
+  </script>
+</body>
+</html>

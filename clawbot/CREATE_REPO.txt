@@ -1,0 +1,14 @@
+STEP 1: Create the repo on GitHub
+================================
+Open this link in your browser (logged into GitHub as mukithc):
+
+https://github.com/new?name=clawbot-money-engine
+
+- Name will be pre-filled: clawbot-money-engine
+- Visibility: Public
+- DO NOT check "Add a README file"
+- Click "Create repository"
+
+STEP 2: Come back here and tell me "repo created"
+================================
+I will then push the code and it will appear in Render.
