@@ -56,22 +56,7 @@ export const SEO_CONFIGS: Record<string, SEOConfig> = {
     ogTitle: "Swarm Simulator — AI Collision Avoidance for 500+ Satellites",
     lastUpdated: "2026-02-23T00:00:00Z",
   },
-  "/simulator/ai-astronaut-robot": {
-    path: "/simulator/ai-astronaut-robot",
-    title: "AI Astronaut Robot Simulator — Build & Train Space Robots | Space-AGI Robotics Lab",
-    description: "World-first AI Astronaut Robot Simulator. Build humanoid, rover, drone robots. Train vision AI. Simulate ISS, Moon, Mars, deep space. Object detection, navigation, satellite repair. Trusted by engineers, researchers, future space pioneers.",
-    keywords: "space ai robot, astronaut robot simulator, ai humanoid in space, space robotics training, build space robot online, space agi robotics, NASA robot, SpaceX robot, AI space robot, humanoid robot space, Mars rover AI, ISS robot, computer vision space",
-    ogTitle: "AI Astronaut Robot Simulator — World First Space-AGI Robotics Lab",
-    lastUpdated: "2026-03-05T00:00:00Z",
-  },
-  "/quantum-space-agi": {
-    path: "/quantum-space-agi",
-    title: "Quantum Space AGI Lab — Curvature-Aware Navigation | OrbitalSimulatorHub",
-    description: "Explore curvature-aware navigation with a safety shield and simulated quantum-assist planner. Educational sandbox for OrbitalSimulatorHub.",
-    keywords: "quantum space AGI, curvature navigation, quantum assist, OrbitalSimulatorHub, space education",
-    ogTitle: "Quantum Space AGI Lab",
-    lastUpdated: "2026-02-23T00:00:00Z",
-  },
+  
   "/quantum-space-agi/scenario": {
     path: "/quantum-space-agi/scenario",
     title: "Choose Scenario — Quantum Space AGI Lab",
