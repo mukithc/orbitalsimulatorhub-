@@ -38,7 +38,7 @@ try {
   console.log('✅ Client built\n');
 
   // Step 3: Check if Vercel CLI is available
-  const vercelPath = execSync('where vercel', { encoding: 'utf-8', stdio: 'pipe' }).trim();
+  const vercelPath = execSync('which vercel', { encoding: 'utf-8', stdio: 'pipe' }).trim();
   if (vercelPath && existsSync(vercelPath)) {
     console.log('🌐 Step 3: Deploying to Vercel...');
     try {
