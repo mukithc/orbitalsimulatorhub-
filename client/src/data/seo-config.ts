@@ -377,6 +377,13 @@ export const SEO_CONFIGS: Record<string, SEOConfig> = {
     keywords: "space mission timeline, Apollo timeline, space history, mission history, Sputnik to Artemis",
     lastUpdated: "2026-02-18T00:00:00Z",
   },
+  "/missions/platform": {
+    path: "/missions/platform",
+    title: "Phase 5/6 Mission Platform — AI Mission Planning & Interstellar Operations | Orbital Simulator Hub",
+    description: "Explore the Phase 5/6 mission planning platform for autonomous interstellar probes, deep-space logistics, and future mission intelligence. Connect mission design, trajectory optimization, and resilience planning.",
+    keywords: "mission planning platform, interstellar operations, AI mission planning, deep space logistics, autonomous mission control, phase 5 mission, phase 6 mission",
+    lastUpdated: "2026-07-10T00:00:00Z",
+  },
   "/simulator/ai-astronaut-robot": {
     path: "/simulator/ai-astronaut-robot",
     title: "AI Astronaut Robot Simulator — Build & Train Space Robots | Space-AGI Robotics Lab",

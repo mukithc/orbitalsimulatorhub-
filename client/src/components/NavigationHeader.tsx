@@ -4,6 +4,7 @@ import { ThemeSelector } from "./ThemeSelector";
 
 const MISSION_SUBNAV = [
   { path: "/missions", label: "Missions", title: "Space missions — Apollo, Gemini, Shuttle" },
+  { path: "/missions/platform", label: "Mission Platform", title: "Phase 5/6 mission planning platform" },
   { path: "/astronauts", label: "Astronauts", title: "Astronaut Explorer — all astronauts, moonwalkers" },
   { path: "/artifacts", label: "Brought Back", title: "What humans brought back from space" },
 ];

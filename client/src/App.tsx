@@ -30,6 +30,7 @@ import { HowMarsRovers } from "./pages/HowMarsRovers";
 import { HowStarlinkWorks } from "./pages/HowStarlinkWorks";
 import { HowISSWorks } from "./pages/HowISSWorks";
 import { MissionTimeline } from "./pages/MissionTimeline";
+import { MissionPlatform } from "./pages/MissionPlatform";
 import { MissionList } from "./pages/MissionList";
 import { MissionDetail } from "./pages/MissionDetail";
 import { BroughtFromSpace } from "./pages/BroughtFromSpace";
@@ -127,6 +128,7 @@ function App() {
           <Route path="/compare/orbits" component={CompareOrbits} />
           <Route path="/missions" component={MissionList} />
           <Route path="/missions/timeline" component={MissionTimeline} />
+          <Route path="/missions/platform" component={MissionPlatform} />
           <Route path="/missions/:slug" component={MissionDetail} />
           <Route path="/artifacts" component={BroughtFromSpace} />
           <Route path="/quiz/orbital-mechanics" component={OrbitalMechanicsQuiz} />

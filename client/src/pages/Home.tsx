@@ -11,6 +11,7 @@ const FEATURES = [
   { href: "/astrobot", icon: "🤖", title: "AstroBot", desc: "Your AI Space Professor. Orbital mechanics, satellites, missions.", color: "gold" },
   { href: "/learn/orbital-mechanics", icon: "🧠", title: "Orbital Mechanics", desc: "Master orbits, escape velocity, Hohmann transfer.", color: "cyan" },
   { href: "/ai-in-aerospace", icon: "🚀", title: "AI in Space", desc: "Autonomous spacecraft, Mars rover AI, Space AGI.", color: "pink" },
+  { href: "/missions/platform", icon: "🧭", title: "Mission Platform", desc: "Phase 5/6 planning for autonomous missions, deep-space ops, and interstellar logistics.", color: "gold" },
   { href: "/research/space-agi-lab", icon: "🔬", title: "Space-AGI Lab", desc: "5 pillars, humanoid robotics, multi-gravity AGI, live swarm simulator.", color: "cyan" },
 ];
 
@@ -18,6 +19,7 @@ const QUICK_LINKS = [
   { href: "/astronauts", label: "Astronauts" },
   { href: "/planets", label: "Planets" },
   { href: "/missions", label: "Missions" },
+  { href: "/missions/platform", label: "Mission Platform" },
   { href: "/calculators", label: "Calculators" },
   { href: "/satellites", label: "Satellite Data" },
   { href: "/blog", label: "Blog" },
@@ -61,6 +63,7 @@ const EXPLORE_BY_TOPIC = [
   { href: "/simulator/ai-astronaut-robot", icon: "🤖", title: "AI Astronaut Robots" },
   { href: "/blog/category/space-agi", icon: "🧠", title: "Space AGI" },
   { href: "/blog/category/space-engineering", icon: "⚙️", title: "Space Engineering" },
+  { href: "/missions/platform", icon: "🧭", title: "Mission Platform" },
   { href: "/research/space-agi-lab", icon: "🔬", title: "Space-AGI Lab" },
   { href: "/research/space-agi-math", icon: "🧮", title: "Space-AGI Math" },
   { href: "/learn/quantum-space", icon: "⚛", title: "Quantum & Space" },
