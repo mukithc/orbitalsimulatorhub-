@@ -4,12 +4,8 @@
  */
 
 export type ThemeId =
-  | 'space-aurora'
-  | 'light-clean'
-  | 'nasa-blue'
-  | 'deep-purple'
-  | 'mars-red'
-  | 'earth-green'
+  | 'orbital-dark'
+  | 'light-orbit'
   | 'custom';
 
 export type Density = 'compact' | 'normal' | 'spacious';
@@ -43,119 +39,59 @@ export interface ThemeSettings {
 }
 
 export const THEME_PACKS: Record<Exclude<ThemeId, 'custom'>, ThemeVariables> = {
-  'space-aurora': {
-    bg: '#070B14',
-    card: '#0D1628',
-    cardHover: '#12213A',
-    border: '#1E3358',
-    text: '#EAF2FF',
-    muted: '#9FB2D6',
-    primary: '#4AA8FF',
-    secondary: '#8B5CFF',
-    success: '#33D6A6',
-    warning: '#FFC857',
-    danger: '#FF4D6D',
-    heroGradient: 'linear-gradient(90deg, #4AA8FF 0%, #8B5CFF 50%, #33D6A6 100%)',
-  },
-  'light-clean': {
-    bg: '#F8FAFC',
-    card: '#FFFFFF',
-    cardHover: '#F1F5F9',
-    border: '#E2E8F0',
-    text: '#0F172A',
-    muted: '#64748B',
-    primary: '#0EA5E9',
+  'orbital-dark': {
+    bg: '#050816',
+    card: 'rgba(15, 23, 42, 0.72)',
+    cardHover: 'rgba(24, 36, 66, 0.9)',
+    border: 'rgba(148, 163, 184, 0.16)',
+    text: '#F8FAFC',
+    muted: '#94A3B8',
+    primary: '#4F8CFF',
     secondary: '#8B5CF6',
-    success: '#10B981',
-    warning: '#F59E0B',
-    danger: '#EF4444',
-    heroGradient: 'linear-gradient(90deg, #0EA5E9 0%, #8B5CF6 50%, #10B981 100%)',
-  },
-  'nasa-blue': {
-    bg: '#0A1628',
-    card: '#0F2744',
-    cardHover: '#143259',
-    border: '#1E4976',
-    text: '#E0EDFF',
-    muted: '#7B9BC7',
-    primary: '#2E7CF6',
-    secondary: '#5B8DEF',
     success: '#22C55E',
-    warning: '#EAB308',
-    danger: '#DC2626',
-    heroGradient: 'linear-gradient(90deg, #2E7CF6 0%, #5B8DEF 50%, #0EA5E9 100%)',
+    warning: '#F59E0B',
+    danger: '#FB7185',
+    heroGradient: 'linear-gradient(135deg, #4F8CFF 0%, #8B5CF6 50%, #D946EF 100%)',
   },
-  'deep-purple': {
-    bg: '#0D0A14',
-    card: '#16102A',
-    cardHover: '#1E1640',
-    border: '#2E2654',
-    text: '#EDE9FF',
-    muted: '#9F8FCF',
-    primary: '#8B5CFF',
-    secondary: '#A78BFA',
-    success: '#34D399',
-    warning: '#FBBF24',
-    danger: '#F87171',
-    heroGradient: 'linear-gradient(90deg, #8B5CFF 0%, #A78BFA 50%, #C084FC 100%)',
-  },
-  'mars-red': {
-    bg: '#140A0A',
-    card: '#1E1212',
-    cardHover: '#2A1818',
-    border: '#4A2828',
-    text: '#FFEAEA',
-    muted: '#C9A0A0',
-    primary: '#E85D04',
-    secondary: '#DC2F02',
-    success: '#2D6A4F',
-    warning: '#FFBA08',
-    danger: '#FF4D6D',
-    heroGradient: 'linear-gradient(90deg, #E85D04 0%, #DC2F02 50%, #9D0208 100%)',
-  },
-  'earth-green': {
-    bg: '#06140A',
-    card: '#0D1E14',
-    cardHover: '#122A1A',
-    border: '#1E3A2A',
-    text: '#E8FFF0',
-    muted: '#9FCFB4',
-    primary: '#22C55E',
-    secondary: '#33D6A6',
+  'light-orbit': {
+    bg: '#F6F8FC',
+    card: 'rgba(255, 255, 255, 0.88)',
+    cardHover: 'rgba(248, 250, 252, 0.96)',
+    border: 'rgba(15, 23, 42, 0.12)',
+    text: '#0F172A',
+    muted: '#475569',
+    primary: '#2563EB',
+    secondary: '#7C3AED',
     success: '#16A34A',
-    warning: '#EAB308',
-    danger: '#EF4444',
-    heroGradient: 'linear-gradient(90deg, #22C55E 0%, #33D6A6 50%, #0EA5E9 100%)',
+    warning: '#D97706',
+    danger: '#DC2626',
+    heroGradient: 'linear-gradient(135deg, #2563EB 0%, #7C3AED 50%, #DB2777 100%)',
   },
 };
 
 export const THEME_LABELS: Record<Exclude<ThemeId, 'custom'>, string> = {
-  'space-aurora': 'Space Aurora',
-  'light-clean': 'Light Clean',
-  'nasa-blue': 'NASA Blue',
-  'deep-purple': 'Deep Purple',
-  'mars-red': 'Mars Red',
-  'earth-green': 'Earth Green',
+  'orbital-dark': 'Orbital Dark',
+  'light-orbit': 'Light Orbit',
 };
 
-export const DEFAULT_THEME: ThemeId = 'space-aurora';
+export const DEFAULT_THEME: ThemeId = 'orbital-dark';
 
 export function getThemeVariables(settings: ThemeSettings | null): ThemeVariables {
   if (!settings || settings.theme === 'custom') {
     const custom = settings?.theme === 'custom' ? settings : null;
     return {
       bg: custom?.bg ?? THEME_PACKS['space-aurora'].bg,
-      card: custom?.card ?? THEME_PACKS['space-aurora'].card,
-      cardHover: custom?.cardHover ?? THEME_PACKS['space-aurora'].cardHover,
-      border: custom?.border ?? THEME_PACKS['space-aurora'].border,
-      text: custom?.text ?? THEME_PACKS['space-aurora'].text,
-      muted: custom?.muted ?? THEME_PACKS['space-aurora'].muted,
-      primary: custom?.primary ?? THEME_PACKS['space-aurora'].primary,
-      secondary: custom?.secondary ?? THEME_PACKS['space-aurora'].secondary,
-      success: THEME_PACKS['space-aurora'].success,
-      warning: THEME_PACKS['space-aurora'].warning,
-      danger: THEME_PACKS['space-aurora'].danger,
-      heroGradient: THEME_PACKS['space-aurora'].heroGradient,
+      card: custom?.card ?? THEME_PACKS['orbital-dark'].card,
+      cardHover: custom?.cardHover ?? THEME_PACKS['orbital-dark'].cardHover,
+      border: custom?.border ?? THEME_PACKS['orbital-dark'].border,
+      text: custom?.text ?? THEME_PACKS['orbital-dark'].text,
+      muted: custom?.muted ?? THEME_PACKS['orbital-dark'].muted,
+      primary: custom?.primary ?? THEME_PACKS['orbital-dark'].primary,
+      secondary: custom?.secondary ?? THEME_PACKS['orbital-dark'].secondary,
+      success: THEME_PACKS['orbital-dark'].success,
+      warning: THEME_PACKS['orbital-dark'].warning,
+      danger: THEME_PACKS['orbital-dark'].danger,
+      heroGradient: THEME_PACKS['orbital-dark'].heroGradient,
     };
   }
   return THEME_PACKS[settings.theme];

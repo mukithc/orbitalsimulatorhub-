@@ -1,5 +1,178 @@
 import { Link } from "wouter";
 
+type FormulaCard = {
+  id: string;
+  title: string;
+  summary: string;
+  equations: string[];
+  bullets?: string[];
+};
+
+const FOUNDATIONS: FormulaCard[] = [
+  {
+    id: "pmp",
+    title: "1. Pontryagin Maximum Principle (PMP)",
+    summary: "The foundation of optimal spacecraft trajectory optimization, fuel-optimal landing, Mars missions, Apollo guidance, and autonomous spacecraft.",
+    equations: [
+      "State dynamics: ẋ = f(x, u, t)",
+      "Cost functional: J = ϕ(x(t_f)) + ∫[t₀→t_f] L(x, u, t) dt",
+      "Hamiltonian: H(x, λ, u, t) = L(x, u, t) + λᵀf(x, u, t)",
+      "Costate equation: λ̇ = −∂H/∂x",
+      "Optimal control: u* = arg min_u H(x, λ, u)",
+      "Boundary condition: λ(t_f) = ∂ϕ/∂x",
+    ],
+    bullets: [
+      "x = state vector, u = control input, λ = costate (adjoint) variables",
+      "Goal: minimize fuel, time, energy, or control effort",
+    ],
+  },
+  {
+    id: "euler-lagrange",
+    title: "2. Euler-Lagrange Equation",
+    summary: "The basis of optimal control, mechanics, robotics, and physics.",
+    equations: ["d/dt(∂L/∂q̇) − ∂L/∂q = 0"],
+  },
+  {
+    id: "hamilton",
+    title: "3. Hamilton's Equations",
+    summary: "Canonical equations for energy-based dynamics and control derivations.",
+    equations: ["q̇ = ∂H/∂p", "ṗ = −∂H/∂q"],
+  },
+  {
+    id: "state-space",
+    title: "4. State Space Model",
+    summary: "Used everywhere in aerospace guidance, navigation, and control.",
+    equations: ["ẋ = Ax + Bu", "y = Cx + Du"],
+  },
+  {
+    id: "lqr",
+    title: "5. Linear Quadratic Regulator (LQR)",
+    summary: "Optimal feedback for linearized spacecraft and satellite control.",
+    equations: ["J = ∫[0→∞] (xᵀQx + uᵀRu) dt", "u = −Kx"],
+  },
+  {
+    id: "riccati",
+    title: "6. Riccati Equation",
+    summary: "One of the most important equations in optimal control.",
+    equations: ["AᵀP + PA − PBR⁻¹BᵀP + Q = 0"],
+  },
+  {
+    id: "mpc",
+    title: "7. Model Predictive Control (MPC)",
+    summary: "Optimization-based control for constrained, autonomous spacecraft maneuvers.",
+    equations: [
+      "min Σ[k=0→N] (x_kᵀQx_k + u_kᵀRu_k)",
+      "subject to x_(k+1) = Ax_k + Bu_k",
+    ],
+  },
+  {
+    id: "kalman",
+    title: "8. Kalman Filter",
+    summary: "Core state estimation pipeline for guidance, navigation, and control.",
+    equations: [
+      "Prediction: x_(k|k−1) = Ax_(k−1) + Bu",
+      "Covariance: P = APAᵀ + Q",
+      "Gain: K = PHᵀ(HPHᵀ + R)⁻¹",
+      "Update: x = x + K(z − Hx)",
+    ],
+  },
+];
+
+const ORBITAL_AND_ATTITUDE: FormulaCard[] = [
+  {
+    id: "two-body",
+    title: "9. Orbital Dynamics (Two-Body Problem)",
+    summary: "The fundamental equation governing satellite and planetary motion.",
+    equations: ["r¨ = −(μ/r³)r", "μ = GM"],
+  },
+  {
+    id: "vis-viva",
+    title: "10. Vis-Viva Equation",
+    summary: "Determines spacecraft velocity at any point in an orbit.",
+    equations: ["v = √(μ(2/r − 1/a))"],
+  },
+  {
+    id: "rocket",
+    title: "11. Tsiolkovsky Rocket Equation",
+    summary: "The cornerstone of rocket propulsion and mission planning.",
+    equations: ["Δv = v_e ln(m₀/m_f)"],
+  },
+  {
+    id: "cw",
+    title: "12. Clohessy-Wiltshire (Hill's) Equations",
+    summary: "Used for satellite rendezvous and formation flying.",
+    equations: [
+      "x¨ − 2nẏ − 3n²x = u_x",
+      "y¨ + 2nẋ = u_y",
+      "z¨ + n²z = u_z",
+    ],
+  },
+  {
+    id: "quaternion",
+    title: "13. Quaternion Attitude Dynamics",
+    summary: "Used for spacecraft orientation and attitude control.",
+    equations: ["q̇ = 1/2 Ω(ω)q"],
+  },
+  {
+    id: "ekf",
+    title: "14. Extended Kalman Filter (EKF)",
+    summary: "Nonlinear state estimation for spacecraft with nonlinear dynamics or measurements.",
+    equations: ["Prediction: x_(k+1) = f(x_k, u_k)", "Measurement: z = h(x) + v", "Linearization: F = ∂f/∂x"],
+  },
+];
+
+const DECISION_AND_STABILITY: FormulaCard[] = [
+  {
+    id: "bellman",
+    title: "15. Bellman Equation (Dynamic Programming)",
+    summary: "The foundation of reinforcement learning and optimal decision-making.",
+    equations: ["V(x) = min_u [L(x, u) + V(f(x, u))]"],
+  },
+  {
+    id: "hjb",
+    title: "16. Hamilton-Jacobi-Bellman (HJB) Equation",
+    summary: "The continuous-time optimal control equation, generalizing Bellman's principle.",
+    equations: ["−∂V/∂t = min_u [L + ∇Vᵀf]"],
+  },
+  {
+    id: "lyapunov",
+    title: "17. Lyapunov Stability",
+    summary: "A key criterion for proving stability of control systems.",
+    equations: ["V(x) > 0", "V̇(x) < 0"],
+  },
+  {
+    id: "eigenvalue",
+    title: "18. Eigenvalue Problem",
+    summary: "Used extensively in vibration analysis, control system stability, orbital dynamics, and structural mechanics.",
+    equations: ["Av = λv", "Example eigendirections: λ₁ = 3, λ₂ = 1"],
+  },
+];
+
+function FormulaGrid({ cards }: { cards: FormulaCard[] }) {
+  return (
+    <div className="grid gap-5 md:grid-cols-2">
+      {cards.map((card) => (
+        <article key={card.id} className="rounded-xl border p-5" style={{ background: "var(--bg-surface)", borderColor: "rgba(255,255,255,0.1)" }}>
+          <h3 className="text-base font-bold mb-2" style={{ color: "var(--accent-cyan)" }}>{card.title}</h3>
+          <p className="text-sm mb-3" style={{ color: "var(--text-secondary)" }}>{card.summary}</p>
+          <div className="rounded-lg p-4 font-mono text-sm space-y-2" style={{ background: "rgba(15,23,42,0.62)", color: "var(--text-primary)" }}>
+            {card.equations.map((equation) => (
+              <p key={equation}>{equation}</p>
+            ))}
+          </div>
+          {card.bullets && (
+            <ul className="mt-3 space-y-1 text-sm" style={{ color: "var(--text-secondary)" }}>
+              {card.bullets.map((bullet) => (
+                <li key={bullet}>• {bullet}</li>
+              ))}
+            </ul>
+          )}
+        </article>
+      ))}
+    </div>
+  );
+}
+
 export function SpaceAGIMathematics() {
   return (
     <div className="max-w-4xl mx-auto space-y-12">
@@ -17,64 +190,18 @@ export function SpaceAGIMathematics() {
       {/* PART 1 — Optimal Control Theory */}
       <section className="rounded-xl border-2 p-6" style={{ background: "var(--bg-card)", borderColor: "var(--accent-cyan)" }}>
         <h2 className="text-xl font-bold mb-6" style={{ color: "var(--text-primary)" }}>🚀 Part 1 — Optimal Control Theory</h2>
+        <p className="text-sm mb-6" style={{ color: "var(--text-secondary)" }}>
+          These are the core equations behind guidance, navigation, control, fuel-optimal transfers, autonomous landing, and future self-directed spacecraft.
+        </p>
+        <FormulaGrid cards={FOUNDATIONS} />
+      </section>
 
-        {/* 1️⃣ Optimal Control Problem */}
-        <div className="mb-8">
-          <h3 className="text-base font-bold mb-3" style={{ color: "var(--accent-cyan)" }}>1️⃣ Optimal Control Problem (Continuous Time)</h3>
-          <div className="rounded-lg p-4 font-mono text-sm mb-2" style={{ background: "var(--bg-surface)" }}>
-            <p className="font-bold mb-1">Spacecraft dynamics:</p>
-            <p className="mb-3">ẋ(t) = f(x(t), u(t), t)</p>
-            <p className="font-bold mb-1">Mission objective:</p>
-            <p>min<sub>u(t)</sub> J = ∫<sub>0</sub><sup>T</sup> L(x(t), u(t), t) dt + Φ(x(T))</p>
-            <p className="text-xs mt-2" style={{ color: "var(--text-secondary)" }}>
-              Where: L = running cost (fuel, risk, energy), Φ = terminal cost, u(t) = thrust control
-            </p>
-          </div>
-        </div>
-
-        {/* 2️⃣ Pontryagin's Maximum Principle */}
-        <div className="mb-8">
-          <h3 className="text-base font-bold mb-3" style={{ color: "var(--accent-cyan)" }}>2️⃣ Pontryagin&apos;s Maximum Principle (Real Engineering Math)</h3>
-          <div className="rounded-lg p-4 font-mono text-sm mb-2" style={{ background: "var(--bg-surface)" }}>
-            <p className="font-bold mb-1">Define Hamiltonian:</p>
-            <p className="mb-2">H = L(x, u, t) + λ<sup>T</sup>f(x, u, t)</p>
-            <p className="font-bold mb-1">Costate dynamics:</p>
-            <p className="mb-2">λ̇ = −∂H/∂x</p>
-            <p className="font-bold mb-1">Optimal control condition:</p>
-            <p>u* = argmin<sub>u</sub> H(x, u, λ, t)</p>
-          </div>
-          <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
-            Used in: fuel-optimal transfers, low-thrust trajectory design, interplanetary mission planning. This makes your site graduate-level credible.
-          </p>
-        </div>
-
-        {/* 3️⃣ MPC */}
-        <div className="mb-8">
-          <h3 className="text-base font-bold mb-3" style={{ color: "var(--accent-cyan)" }}>3️⃣ Model Predictive Control (MPC for Autonomous Satellites)</h3>
-          <div className="rounded-lg p-4 font-mono text-sm mb-2" style={{ background: "var(--bg-surface)" }}>
-            <p className="font-bold mb-1">Discrete form:</p>
-            <p className="mb-2">x<sub>k+1</sub> = Ax<sub>k</sub> + Bu<sub>k</sub></p>
-            <p className="font-bold mb-1">Optimization at each time step:</p>
-            <p>min<sub>u<sub>0:N</sub></sub> ∑<sub>k=0</sub><sup>N</sup> (x<sub>k</sub> − x<sub>ref</sub>)<sup>T</sup>Q(x<sub>k</sub> − x<sub>ref</sub>) + u<sub>k</sub><sup>T</sup>Ru<sub>k</sub></p>
-          </div>
-          <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
-            Used for: orbit correction, docking, formation flying, AI-controlled satellite swarms.
-          </p>
-        </div>
-
-        {/* 4️⃣ LQR */}
-        <div>
-          <h3 className="text-base font-bold mb-3" style={{ color: "var(--accent-cyan)" }}>4️⃣ LQR (Linear Quadratic Regulator)</h3>
-          <div className="rounded-lg p-4 font-mono text-sm mb-2" style={{ background: "var(--bg-surface)" }}>
-            <p className="font-bold mb-1">Cost:</p>
-            <p className="mb-2">J = ∫<sub>0</sub><sup>∞</sup> (x<sup>T</sup>Qx + u<sup>T</sup>Ru) dt</p>
-            <p className="font-bold mb-1">Optimal solution:</p>
-            <p className="mb-2">u = −Kx</p>
-            <p className="font-bold mb-1">Where K solves Riccati equation:</p>
-            <p>A<sup>T</sup>P + PA − PBR<sup>−1</sup>B<sup>T</sup>P + Q = 0</p>
-          </div>
-          <p className="text-sm" style={{ color: "var(--text-secondary)" }}>This is elite aerospace control math.</p>
-        </div>
+      <section className="rounded-xl border-2 p-6" style={{ background: "var(--bg-card)", borderColor: "var(--accent-gold)" }}>
+        <h2 className="text-xl font-bold mb-6" style={{ color: "var(--text-primary)" }}>🛰 Part 2 — Orbital Dynamics, Estimation, and Attitude</h2>
+        <p className="text-sm mb-6" style={{ color: "var(--text-secondary)" }}>
+          The equations below connect control theory to the actual flight physics of satellites, rendezvous, propulsion, and spacecraft attitude.
+        </p>
+        <FormulaGrid cards={ORBITAL_AND_ATTITUDE} />
       </section>
 
       {/* PART 3 — Space-AGI Mathematical Framework */}
@@ -129,6 +256,14 @@ export function SpaceAGIMathematics() {
             <p className="text-xs mt-2" style={{ color: "var(--text-secondary)" }}>Barrier prevents unsafe state. Brings alignment math into space engineering.</p>
           </div>
         </div>
+      </section>
+
+      <section className="rounded-xl border-2 p-6" style={{ background: "var(--bg-card)", borderColor: "rgba(56,217,255,0.24)" }}>
+        <h2 className="text-xl font-bold mb-6" style={{ color: "var(--text-primary)" }}>📘 Part 4 — Decision, Stability, and System Modes</h2>
+        <p className="text-sm mb-6" style={{ color: "var(--text-secondary)" }}>
+          These equations govern optimal decision-making, proof of stability, and the modal structure of aerospace systems.
+        </p>
+        <FormulaGrid cards={DECISION_AND_STABILITY} />
       </section>
 
       <div className="flex flex-wrap gap-3">

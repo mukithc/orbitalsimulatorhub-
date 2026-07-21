@@ -32,7 +32,7 @@ export default async function AppLayout({
   }
 
   return (
-    <div className="flex h-screen bg-space-900 overflow-hidden">
+    <div className="flex h-screen overflow-hidden bg-app orbital-grid">
       <Sidebar profile={profile} userId={user.id} workspaceId={WORKSPACE_ID} />
       <main className="flex-1 flex flex-col min-w-0">
         {children}

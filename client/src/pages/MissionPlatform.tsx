@@ -145,22 +145,22 @@ export function MissionPlatform() {
         </h2>
         <div className="grid gap-4 sm:grid-cols-2">
           <Link href="/missions/timeline">
-            <a className="rounded-2xl border border-[var(--border-color)] bg-white p-5 text-sm font-medium transition hover:border-[var(--accent-primary)]">
+            <a className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] p-5 text-sm font-medium transition hover:border-[var(--accent-primary)]">
               View Mission Timeline
             </a>
           </Link>
           <Link href="/simulator">
-            <a className="rounded-2xl border border-[var(--border-color)] bg-white p-5 text-sm font-medium transition hover:border-[var(--accent-primary)]">
+            <a className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] p-5 text-sm font-medium transition hover:border-[var(--accent-primary)]">
               Open Orbit Simulator
             </a>
           </Link>
           <Link href="/quantum-space-agi">
-            <a className="rounded-2xl border border-[var(--border-color)] bg-white p-5 text-sm font-medium transition hover:border-[var(--accent-primary)]">
+            <a className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] p-5 text-sm font-medium transition hover:border-[var(--accent-primary)]">
               Explore Quantum Space AGI
             </a>
           </Link>
           <Link href="/ai-in-aerospace">
-            <a className="rounded-2xl border border-[var(--border-color)] bg-white p-5 text-sm font-medium transition hover:border-[var(--accent-primary)]">
+            <a className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] p-5 text-sm font-medium transition hover:border-[var(--accent-primary)]">
               Read AI Mission Planning</a>
           </Link>
         </div>
@@ -171,15 +171,15 @@ export function MissionPlatform() {
           Mission Planning State
         </h2>
         <div className="grid gap-4 sm:grid-cols-3">
-          <div className="rounded-2xl bg-white p-4 border border-[var(--border-color)]">
+          <div className="rounded-2xl bg-[var(--bg-surface)] p-4 border border-[var(--border-color)]">
             <p className="text-xs uppercase font-semibold tracking-wide text-[var(--text-muted)]">Mission type</p>
             <p className="mt-2 font-semibold text-[var(--text-primary)]">Interstellar probe</p>
           </div>
-          <div className="rounded-2xl bg-white p-4 border border-[var(--border-color)]">
+          <div className="rounded-2xl bg-[var(--bg-surface)] p-4 border border-[var(--border-color)]">
             <p className="text-xs uppercase font-semibold tracking-wide text-[var(--text-muted)]">Planning focus</p>
             <p className="mt-2 font-semibold text-[var(--text-primary)]">Autonomy & resilience</p>
           </div>
-          <div className="rounded-2xl bg-white p-4 border border-[var(--border-color)]">
+          <div className="rounded-2xl bg-[var(--bg-surface)] p-4 border border-[var(--border-color)]">
             <p className="text-xs uppercase font-semibold tracking-wide text-[var(--text-muted)]">Core objective</p>
             <p className="mt-2 font-semibold text-[var(--text-primary)]">Safe mission execution</p>
           </div>

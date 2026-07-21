@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
 import { DailyTopicIcon } from "../components/DailyTopicIcon";
 import { ShareBar } from "../components/ShareBar";
@@ -75,19 +75,91 @@ const EXPLORE_BY_TOPIC = [
   { href: "/space-news", icon: "📰", title: "Daily Space News" },
 ];
 
+const HOME_FORMULA_SPOTLIGHTS = [
+  {
+    title: "Pontryagin Maximum Principle",
+    equation: "u* = arg min_u H(x, λ, u)",
+    desc: "The core rule for fuel-optimal spacecraft guidance, landers, and autonomous transfers.",
+  },
+  {
+    title: "Two-Body Dynamics",
+    equation: "r¨ = −(μ/r³)r",
+    desc: "The fundamental law behind satellite and planetary motion.",
+  },
+  {
+    title: "Rocket Equation",
+    equation: "Δv = v_e ln(m₀/m_f)",
+    desc: "The mass-to-velocity tradeoff at the heart of mission planning.",
+  },
+  {
+    title: "Kalman Filter Update",
+    equation: "x = x + K(z − Hx)",
+    desc: "How spacecraft combine noisy measurements into a usable state estimate.",
+  },
+];
+
 export function Home() {
   const [showExplore, setShowExplore] = useState(false);
+  const shellRef = useRef<HTMLDivElement>(null);
   const updates = getTodaysUpdates();
   const latestPost = LATEST_POSTS[0];
 
+  useEffect(() => {
+    const shell = shellRef.current;
+    if (!shell) return;
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const coarsePointer = window.matchMedia("(pointer: coarse)").matches;
+    const compactViewport = window.matchMedia("(max-width: 900px)").matches;
+    if (reduceMotion || coarsePointer || compactViewport) return;
+
+    let frame = 0;
+
+    const applyParallax = (clientX: number, clientY: number) => {
+      const rect = shell.getBoundingClientRect();
+      const nx = (clientX - rect.left) / rect.width - 0.5;
+      const ny = (clientY - rect.top) / rect.height - 0.5;
+      shell.style.setProperty("--parallax-x", `${nx * -22}px`);
+      shell.style.setProperty("--parallax-y", `${ny * -14}px`);
+      shell.style.setProperty("--parallax-tilt-x", `${ny * 2.5}deg`);
+      shell.style.setProperty("--parallax-tilt-y", `${nx * -3}deg`);
+    };
+
+    const onMove = (event: MouseEvent) => {
+      if (frame) cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => applyParallax(event.clientX, event.clientY));
+    };
+
+    const onLeave = () => {
+      shell.style.setProperty("--parallax-x", "0px");
+      shell.style.setProperty("--parallax-y", "0px");
+      shell.style.setProperty("--parallax-tilt-x", "0deg");
+      shell.style.setProperty("--parallax-tilt-y", "0deg");
+    };
+
+    shell.addEventListener("mousemove", onMove);
+    shell.addEventListener("mouseleave", onLeave);
+
+    return () => {
+      if (frame) cancelAnimationFrame(frame);
+      shell.removeEventListener("mousemove", onMove);
+      shell.removeEventListener("mouseleave", onLeave);
+    };
+  }, []);
+
   return (
-    <div className="home-page-wrapper -mx-4 px-4 py-2 rounded-2xl">
-      <div className="max-w-4xl mx-auto">
+    <div ref={shellRef} className="home-page-wrapper orbital-ambient-shell -mx-4 px-4 py-2 rounded-2xl">
+      <div className="orbital-ambient-layer" aria-hidden>
+        <span className="orbital-orb orbital-orb-a" />
+        <span className="orbital-orb orbital-orb-b" />
+        <span className="orbital-orb orbital-orb-c" />
+      </div>
+      <div className="max-w-4xl mx-auto relative z-10">
         {/* ═══ NEWEST BLOG POST — Prominent at top ═══ */}
         {latestPost && (
-          <section className="mb-6 animate-fade-in-up">
+          <section className="mb-6 animate-fade-in-up modern-section">
             <Link href={`/blog/${latestPost.slug}`}>
-              <a className="block rounded-2xl border overflow-hidden transition hover:opacity-95" style={{ background: "rgba(0,217,255,0.08)", borderColor: "rgba(0,217,255,0.35)" }}>
+              <a className="block rounded-2xl border overflow-hidden transition hover:opacity-95 modern-hover-glow" style={{ background: "rgba(0,217,255,0.08)", borderColor: "rgba(0,217,255,0.35)" }}>
                 <div className="flex flex-col sm:flex-row">
                   <div className="sm:w-2/5 min-h-[160px] sm:min-h-[200px] relative">
                     <img src={getBlogImage(latestPost)} alt="" className="absolute inset-0 w-full h-full object-cover" loading="eager" />
@@ -106,7 +178,7 @@ export function Home() {
         )}
 
         {/* ═══ UPDATES BANNER — Latest Updates ═══ */}
-        <section className="updates-banner rounded-2xl p-5 md:p-6 mb-8 animate-fade-in-up">
+        <section className="updates-banner rounded-2xl p-5 md:p-6 mb-8 animate-fade-in-up modern-section animate-delay-1">
           <div className="flex items-center gap-2 mb-4">
             <span className="text-2xl">✨</span>
             <h2 className="text-lg md:text-xl font-bold uppercase tracking-wider" style={{ color: "var(--accent-cyan)" }}>
@@ -137,7 +209,7 @@ export function Home() {
         </section>
 
           {/* Hero — Intelligence for the Space Age */}
-        <section className="rounded-2xl px-6 py-8 sm:py-10 text-center mb-8 hero-gradient" style={{ boxShadow: "0 8px 32px rgba(0,0,0,0.2)" }}>
+        <section className="rounded-2xl px-6 py-8 sm:py-10 text-center mb-8 hero-gradient modern-hero-panel animate-fade-in-up animate-delay-2" style={{ boxShadow: "0 8px 32px rgba(0,0,0,0.2)" }}>
         <p className="text-xs font-medium uppercase tracking-widest text-[var(--accent-cyan)] mb-2">Space Engineering • AI • Quantum • Daily News • Futuristic</p>
         <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2 leading-tight">
           OrbitalSimulatorHub — Intelligence for the Space Age
@@ -169,6 +241,161 @@ export function Home() {
         </div>
           <p className="text-xs text-slate-400">Trusted by students, engineers, researchers worldwide</p>
           <ShareBar path="/" showRedditSubs />
+        </section>
+
+        <section
+          className="rounded-[28px] p-6 md:p-7 mb-8 modern-section animate-fade-in-up animate-delay-2"
+          style={{
+            background: "linear-gradient(145deg, rgba(15,23,42,0.92), rgba(14,30,64,0.86))",
+            border: "1px solid rgba(56,217,255,0.22)",
+            boxShadow: "0 20px 55px rgba(2,8,23,0.45)",
+          }}
+        >
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-2xl">
+              <p className="text-xs font-bold uppercase tracking-[0.24em] mb-3" style={{ color: "var(--accent-cyan)" }}>
+                New Formula Focus
+              </p>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-3" style={{ color: "var(--text-primary)" }}>
+                Pontryagin now leads the homepage math story
+              </h2>
+              <p className="text-sm sm:text-base leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                Your platform now highlights the same mathematics used for optimal spacecraft trajectories, fuel-aware landings, estimation, and autonomous orbital decision-making.
+              </p>
+            </div>
+            <div className="rounded-2xl px-4 py-3 font-mono text-sm" style={{ background: "rgba(8,15,31,0.82)", border: "1px solid rgba(56,217,255,0.16)", color: "var(--accent-cyan)" }}>
+              H(x, λ, u, t) = L(x, u, t) + λᵀf(x, u, t)
+            </div>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4 mt-6">
+            {HOME_FORMULA_SPOTLIGHTS.map((item) => (
+              <article key={item.title} className="rounded-2xl p-4" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
+                <p className="text-xs font-semibold uppercase tracking-wide mb-2" style={{ color: "var(--accent-gold)" }}>{item.title}</p>
+                <p className="font-mono text-sm mb-3" style={{ color: "var(--text-primary)" }}>{item.equation}</p>
+                <p className="text-xs leading-relaxed" style={{ color: "var(--text-secondary)" }}>{item.desc}</p>
+              </article>
+            ))}
+          </div>
+          <div className="flex flex-wrap gap-2 mt-5">
+            <Link href="/research/space-agi-math"><a className="px-3 py-1.5 rounded text-sm" style={{ background: "var(--accent-cyan)", color: "#0f172a" }}>Full mathematics</a></Link>
+            <Link href="/formulas-library"><a className="px-3 py-1.5 rounded text-sm" style={{ background: "rgba(255,255,255,0.06)", color: "var(--text-primary)" }}>Orbital formulas</a></Link>
+            <Link href="/ai-in-aerospace"><a className="px-3 py-1.5 rounded text-sm" style={{ background: "rgba(255,255,255,0.06)", color: "var(--text-primary)" }}>AI in aerospace</a></Link>
+          </div>
+        </section>
+
+        <section
+          className="rounded-[28px] p-6 md:p-7 mb-8 relative overflow-hidden modern-section animate-fade-in-up animate-delay-2"
+          style={{
+            background: "linear-gradient(135deg, rgba(217,70,239,0.14), rgba(79,140,255,0.16) 55%, rgba(56,217,255,0.12))",
+            border: "1px solid rgba(217,70,239,0.28)",
+            boxShadow: "0 18px 50px rgba(5,8,22,0.35)",
+          }}
+        >
+          <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(circle at top right, rgba(56,217,255,0.14), transparent 32%), radial-gradient(circle at bottom left, rgba(139,92,246,0.16), transparent 38%)" }} />
+          <div className="relative flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+            <div className="max-w-2xl">
+              <span
+                className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-[0.22em]"
+                style={{ background: "rgba(248,250,252,0.08)", color: "var(--accent-cyan)" }}
+              >
+                Coming Soon
+              </span>
+              <h2 className="mt-4 text-2xl sm:text-3xl font-bold" style={{ color: "var(--text-primary)" }}>
+                Orbital Community is on the way
+              </h2>
+              <p className="mt-3 text-sm sm:text-base leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                Orbital Community is our upcoming professional network for space enthusiasts, engineers, researchers, students, founders, and creators. It is being built as a modern place to connect, collaborate, share mission ideas, and join real conversations around aerospace, astronomy, robotics, and the future beyond Earth.
+              </p>
+            </div>
+            <div
+              className="rounded-3xl p-5 lg:max-w-sm"
+              style={{ background: "rgba(15,23,42,0.56)", border: "1px solid rgba(248,250,252,0.1)" }}
+            >
+              <p className="text-xs font-bold uppercase tracking-[0.2em] mb-2" style={{ color: "var(--accent-pink)" }}>
+                What to expect
+              </p>
+              <ul className="space-y-2 text-sm" style={{ color: "var(--text-secondary)" }}>
+                <li>• Space-focused communities and live discussions</li>
+                <li>• Professional profiles, missions, and collaboration spaces</li>
+                <li>• A premium social hub built for the global space industry</li>
+              </ul>
+              <a
+                href="https://orbitalcommunity.com"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center mt-4 px-4 py-2.5 rounded-full font-semibold text-sm"
+                style={{ background: "var(--accent-primary)", color: "var(--text-on-accent)" }}
+              >
+                Visit OrbitalCommunity.com
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Mission Platform spotlight — extra extraordinary */}
+        <section className="relative rounded-[32px] p-6 lg:p-8 mb-8 overflow-hidden modern-section animate-fade-in-up animate-delay-3"
+          style={{
+            background: "linear-gradient(135deg, rgba(56,189,248,0.18), rgba(168,85,247,0.14) 50%, rgba(14,165,233,0.08))",
+            border: "2px solid rgba(56,189,248,0.35)",
+          }}
+        >
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(56,189,248,0.18),transparent_40%),radial-gradient(circle_at_bottom_left,rgba(168,85,247,0.18),transparent_35%)] pointer-events-none" />
+          <div className="relative grid gap-6 lg:grid-cols-[1.8fr_1fr] items-center">
+            <div>
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-[0.2em]"
+                style={{ background: "rgba(56,189,248,0.2)", color: "var(--accent-cyan)" }}
+              >
+                Mission Platform
+              </span>
+              <h2 className="mt-4 text-2xl sm:text-3xl font-bold" style={{ color: "var(--text-primary)" }}>
+                Phase 5/6 Autonomous Mission Platform
+              </h2>
+              <p className="mt-3 text-sm sm:text-base max-w-2xl" style={{ color: "var(--text-secondary)" }}>
+                Lead the next era of space operations with a living mission command center. Plan autonomous probes, manage deep-space logistics, and design interstellar networks from one bold platform.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-3">
+                <Link href="/missions/platform">
+                  <a className="inline-flex items-center gap-2 px-5 py-3 rounded-full font-semibold text-sm"
+                    style={{ background: "var(--accent-primary)", color: "var(--text-on-accent)" }}
+                  >
+                    Enter Mission Platform
+                  </a>
+                </Link>
+                <Link href="/missions">
+                  <a className="inline-flex items-center gap-2 px-5 py-3 rounded-full border-2 font-semibold text-sm"
+                    style={{ borderColor: "rgba(255,255,255,0.18)", color: "var(--text-on-surface)" }}
+                  >
+                    Browse missions
+                  </a>
+                </Link>
+              </div>
+            </div>
+            <div className="grid gap-3">
+              <div className="rounded-3xl p-4"
+                style={{ background: "rgba(15,23,42,0.72)", border: "1px solid rgba(255,255,255,0.08)" }}
+              >
+                <p className="text-xs uppercase tracking-[0.2em] font-bold mb-2" style={{ color: "var(--accent-cyan)" }}>
+                  Platform pillars
+                </p>
+                <ul className="space-y-2 text-sm" style={{ color: "var(--text-secondary)" }}>
+                  <li>• Autonomous mission orchestration</li>
+                  <li>• Deep-space network planning</li>
+                  <li>• AI-driven decision intelligence</li>
+                  <li>• Interstellar logistics & safety</li>
+                </ul>
+              </div>
+              <div className="rounded-3xl p-4"
+                style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}
+              >
+                <p className="text-xs uppercase tracking-[0.2em] font-bold mb-2" style={{ color: "var(--accent-gold)" }}>
+                  Why it matters
+                </p>
+                <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
+                  Turn bold mission ideas into executable strategy for future explorers, AI crew, and self-driving spacecraft.
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* 5 main features — Simulator, AstroBot, Orbital Mechanics, AI in Space, Space-AGI Lab */}

@@ -68,10 +68,15 @@ export function NavigationHeader() {
   const [simulatorOpen, setSimulatorOpen] = useState(false);
   const [spaceAgiOpen, setSpaceAgiOpen] = useState(false);
   const [blogOpen, setBlogOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const missionsRef = useRef<HTMLDivElement>(null);
   const simulatorRef = useRef<HTMLDivElement>(null);
   const spaceAgiRef = useRef<HTMLDivElement>(null);
   const blogRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [location]);
 
   useEffect(() => {
     function handleClick(e: MouseEvent) {
@@ -94,7 +99,7 @@ export function NavigationHeader() {
 
   return (
     <header
-      className="border-b-2 backdrop-blur-sm sticky top-0 z-50 shadow-sm"
+      className="border-b-2 backdrop-blur-xl sticky top-0 z-50 shadow-sm nav-shell"
       style={{
         borderColor: "var(--border-accent)",
         background: "var(--bg-header)",
@@ -114,7 +119,18 @@ export function NavigationHeader() {
           </Link>
         </div>
 
-        <nav className="flex flex-wrap gap-1 items-center">
+        <button
+          type="button"
+          className="lg:hidden nav-pill-btn px-3 py-2 rounded-lg text-sm font-semibold"
+          style={{ color: "var(--text-primary)", border: "1px solid var(--border-color)", background: "var(--bg-card)" }}
+          onClick={() => setMobileOpen((v) => !v)}
+          aria-expanded={mobileOpen}
+          aria-label="Toggle navigation menu"
+        >
+          {mobileOpen ? "Close" : "Menu"}
+        </button>
+
+        <nav className="hidden lg:flex flex-wrap gap-1 items-center">
           {NAV.slice(0, 3).map(({ path, label, title, subnav }) => (
             subnav ? null : <NavLink key={path} path={path} label={label} title={title} location={location} />
           ))}
@@ -122,7 +138,7 @@ export function NavigationHeader() {
             <button
               onClick={() => setSimulatorOpen((v) => !v)}
               onMouseEnter={() => setSimulatorOpen(true)}
-              className="px-3 py-2 rounded-lg font-medium transition text-sm flex items-center gap-1"
+              className={`px-3 py-2 rounded-lg font-medium transition text-sm flex items-center gap-1 nav-pill-btn ${isSimulatorActive(location) ? "nav-pill-active" : ""}`}
               style={
                 isSimulatorActive(location)
                   ? { background: "var(--nav-active-bg)", color: "var(--nav-active-text)" }
@@ -136,15 +152,16 @@ export function NavigationHeader() {
             </button>
             {simulatorOpen && (
               <div
-                className="absolute top-full left-0 mt-1 py-1 rounded-lg shadow-lg min-w-[180px]"
+                className="absolute top-full left-0 mt-1 py-1 rounded-lg shadow-lg min-w-[180px] nav-dropdown"
                 style={{ background: "var(--bg-card)", border: "1px solid var(--border-color)" }}
                 onMouseLeave={() => setSimulatorOpen(false)}
               >
-                {SIMULATOR_SUBNAV.map(({ path, label, title }) => (
+                {SIMULATOR_SUBNAV.map(({ path, label, title }, idx) => (
                   <Link key={path} href={path} onClick={() => setSimulatorOpen(false)}>
                     <a
-                      className="block px-4 py-2 text-sm font-medium transition"
+                      className="block px-4 py-2 text-sm font-medium transition nav-dropdown-link nav-dropdown-item"
                       style={{
+                        animationDelay: `${idx * 28}ms`,
                         color: location === path || (path === "/simulator" && location === "/simulator") ? "var(--accent-cyan)" : "var(--text-primary)",
                       }}
                     >
@@ -159,7 +176,7 @@ export function NavigationHeader() {
             <button
               onClick={() => setMissionsOpen((v) => !v)}
               onMouseEnter={() => setMissionsOpen(true)}
-              className="px-3 py-2 rounded-lg font-medium transition text-sm flex items-center gap-1"
+              className={`px-3 py-2 rounded-lg font-medium transition text-sm flex items-center gap-1 nav-pill-btn ${isMissionsActive(location) ? "nav-pill-active" : ""}`}
               style={
                 isMissionsActive(location)
                   ? { background: "var(--nav-active-bg)", color: "var(--nav-active-text)" }
@@ -173,15 +190,16 @@ export function NavigationHeader() {
             </button>
             {missionsOpen && (
               <div
-                className="absolute top-full left-0 mt-1 py-1 rounded-lg shadow-lg min-w-[160px]"
+                className="absolute top-full left-0 mt-1 py-1 rounded-lg shadow-lg min-w-[160px] nav-dropdown"
                 style={{ background: "var(--bg-card)", border: "1px solid var(--border-color)" }}
                 onMouseLeave={() => setMissionsOpen(false)}
               >
-                {MISSION_SUBNAV.map(({ path, label, title }) => (
+                {MISSION_SUBNAV.map(({ path, label, title }, idx) => (
                   <Link key={path} href={path} onClick={() => setMissionsOpen(false)}>
                     <a
-                      className="block px-4 py-2 text-sm font-medium transition"
+                      className="block px-4 py-2 text-sm font-medium transition nav-dropdown-link nav-dropdown-item"
                       style={{
+                        animationDelay: `${idx * 28}ms`,
                         color: location === path || (path === "/missions" && location.startsWith("/missions")) ? "var(--accent-cyan)" : "var(--text-primary)",
                       }}
                     >
@@ -196,7 +214,7 @@ export function NavigationHeader() {
             <button
               onClick={() => setSpaceAgiOpen((v) => !v)}
               onMouseEnter={() => setSpaceAgiOpen(true)}
-              className="px-3 py-2 rounded-lg font-medium transition text-sm flex items-center gap-1"
+              className={`px-3 py-2 rounded-lg font-medium transition text-sm flex items-center gap-1 nav-pill-btn ${isSpaceAgiActive(location) ? "nav-pill-active" : ""}`}
               style={
                 isSpaceAgiActive(location)
                   ? { background: "var(--nav-active-bg)", color: "var(--nav-active-text)" }
@@ -210,15 +228,16 @@ export function NavigationHeader() {
             </button>
             {spaceAgiOpen && (
               <div
-                className="absolute top-full left-0 mt-1 py-1 rounded-lg shadow-lg min-w-[180px]"
+                className="absolute top-full left-0 mt-1 py-1 rounded-lg shadow-lg min-w-[180px] nav-dropdown"
                 style={{ background: "var(--bg-card)", border: "1px solid var(--border-color)" }}
                 onMouseLeave={() => setSpaceAgiOpen(false)}
               >
-                {SPACE_AGI_SUBNAV.map(({ path, label, title }) => (
+                {SPACE_AGI_SUBNAV.map(({ path, label, title }, idx) => (
                   <Link key={path} href={path} onClick={() => setSpaceAgiOpen(false)}>
                     <a
-                      className="block px-4 py-2 text-sm font-medium transition"
+                      className="block px-4 py-2 text-sm font-medium transition nav-dropdown-link nav-dropdown-item"
                       style={{
+                        animationDelay: `${idx * 28}ms`,
                         color: location === path ? "var(--accent-cyan)" : "var(--text-primary)",
                       }}
                     >
@@ -233,7 +252,7 @@ export function NavigationHeader() {
             <button
               onClick={() => setBlogOpen((v) => !v)}
               onMouseEnter={() => setBlogOpen(true)}
-              className="px-3 py-2 rounded-lg font-medium transition text-sm flex items-center gap-1"
+              className={`px-3 py-2 rounded-lg font-medium transition text-sm flex items-center gap-1 nav-pill-btn ${isBlogActive(location) ? "nav-pill-active" : ""}`}
               style={
                 isBlogActive(location)
                   ? { background: "var(--nav-active-bg)", color: "var(--nav-active-text)" }
@@ -247,11 +266,11 @@ export function NavigationHeader() {
             </button>
             {blogOpen && (
               <div
-                className="absolute top-full left-0 mt-1 py-1 rounded-lg shadow-lg min-w-[160px]"
+                className="absolute top-full left-0 mt-1 py-1 rounded-lg shadow-lg min-w-[160px] nav-dropdown"
                 style={{ background: "var(--bg-card)", border: "1px solid var(--border-color)" }}
                 onMouseLeave={() => setBlogOpen(false)}
               >
-                {BLOG_SUBNAV.map(({ path, label, title }) => {
+                {BLOG_SUBNAV.map(({ path, label, title }, idx) => {
                   const isActive =
                     (path === "/blog" && (location === "/blog" || location.startsWith("/blog/")))
                     || (path === "/learn/aerospace" && location.startsWith("/learn/aerospace"))
@@ -260,8 +279,11 @@ export function NavigationHeader() {
                   return (
                     <Link key={path} href={path} onClick={() => setBlogOpen(false)}>
                       <a
-                        className="block px-4 py-2 text-sm font-medium transition"
-                        style={{ color: isActive ? "var(--accent-cyan)" : "var(--text-primary)" }}
+                        className="block px-4 py-2 text-sm font-medium transition nav-dropdown-link nav-dropdown-item"
+                        style={{
+                          animationDelay: `${idx * 28}ms`,
+                          color: isActive ? "var(--accent-cyan)" : "var(--text-primary)",
+                        }}
                       >
                         {label}
                       </a>
@@ -276,7 +298,55 @@ export function NavigationHeader() {
           ))}
         </nav>
       </div>
+
+      {mobileOpen && <div className="mobile-nav-backdrop" onClick={() => setMobileOpen(false)} aria-hidden />}
+
+      <div className={`lg:hidden mobile-nav-panel ${mobileOpen ? "mobile-nav-panel-open" : ""}`}>
+        <div className="px-4 py-3 border-b" style={{ borderColor: "var(--border-color)" }}>
+          <p className="text-xs uppercase tracking-widest" style={{ color: "var(--text-muted)" }}>Navigate</p>
+        </div>
+
+        <div className="p-3 grid gap-2 max-h-[65vh] overflow-y-auto">
+          <MobileNavLink href="/" label="Home" />
+          <MobileNavLink href="/planets" label="Planets" />
+          <MobileNavLink href="/astrobot" label="AstroBot" />
+          <MobileNavLink href="/research" label="Research" />
+
+          <p className="mt-2 mb-1 text-[11px] uppercase tracking-wider" style={{ color: "var(--text-muted)" }}>Simulator</p>
+          {SIMULATOR_SUBNAV.map(({ path, label }) => (
+            <MobileNavLink key={path} href={path} label={label} nested />
+          ))}
+
+          <p className="mt-2 mb-1 text-[11px] uppercase tracking-wider" style={{ color: "var(--text-muted)" }}>Missions</p>
+          {MISSION_SUBNAV.map(({ path, label }) => (
+            <MobileNavLink key={path} href={path} label={label} nested />
+          ))}
+
+          <p className="mt-2 mb-1 text-[11px] uppercase tracking-wider" style={{ color: "var(--text-muted)" }}>Space-AGI Lab</p>
+          {SPACE_AGI_SUBNAV.map(({ path, label }) => (
+            <MobileNavLink key={path} href={path} label={label} nested />
+          ))}
+
+          <p className="mt-2 mb-1 text-[11px] uppercase tracking-wider" style={{ color: "var(--text-muted)" }}>Blog & Learning</p>
+          {BLOG_SUBNAV.map(({ path, label }) => (
+            <MobileNavLink key={path} href={path} label={label} nested />
+          ))}
+        </div>
+      </div>
     </header>
+  );
+}
+
+function MobileNavLink({ href, label, nested = false }: { href: string; label: string; nested?: boolean }) {
+  return (
+    <Link href={href}>
+      <a
+        className={`mobile-nav-link ${nested ? "mobile-nav-link-nested" : ""}`}
+        style={{ color: "var(--text-primary)" }}
+      >
+        {label}
+      </a>
+    </Link>
   );
 }
 
@@ -285,7 +355,7 @@ function NavLink({ path, label, title, location }: { path: string; label: string
   return (
     <Link href={path} title={title}>
       <a
-        className="px-3 py-2 rounded-lg font-medium transition text-sm"
+        className={`px-3 py-2 rounded-lg font-medium transition text-sm nav-pill-btn ${active ? "nav-pill-active" : ""}`}
         style={
           active
             ? { background: "var(--nav-active-bg)", color: "var(--nav-active-text)" }

@@ -5,14 +5,14 @@ import { THEME_LABELS, type ThemeId } from '@/lib/theme';
 import Link from 'next/link';
 import { useRef, useState } from 'react';
 
-const THEME_IDS: ThemeId[] = ['space-aurora', 'light-clean', 'nasa-blue', 'deep-purple', 'mars-red', 'earth-green'];
+const THEME_IDS: ThemeId[] = ['orbital-dark', 'light-orbit'];
 
 export function ThemeToggle() {
   const { settings, setTheme } = useTheme();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
-  const current = settings?.theme ?? 'space-aurora';
+  const current = settings?.theme ?? 'orbital-dark';
   const label = current === 'custom' ? 'Custom' : THEME_LABELS[current as keyof typeof THEME_LABELS];
 
   return (
@@ -53,17 +53,7 @@ export function ThemeToggle() {
                   className="h-3 w-3 rounded-full shrink-0"
                   style={{
                     backgroundColor:
-                      id === 'space-aurora'
-                        ? '#4AA8FF'
-                        : id === 'light-clean'
-                          ? '#0EA5E9'
-                          : id === 'nasa-blue'
-                            ? '#2E7CF6'
-                            : id === 'deep-purple'
-                              ? '#8B5CFF'
-                              : id === 'mars-red'
-                                ? '#E85D04'
-                                : '#22C55E',
+                      id === 'orbital-dark' ? '#4F8CFF' : '#2563EB',
                   }}
                 />
                 {THEME_LABELS[id as keyof typeof THEME_LABELS]}

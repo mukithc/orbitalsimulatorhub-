@@ -1,15 +1,17 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Geist, Geist_Mono, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { SetupBanner } from '@/components/SetupBanner';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { ThemeInitScript } from '@/components/ThemeInitScript';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const geist = Geist({ subsets: ['latin'], variable: '--font-geist' });
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk' });
+const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono' });
 
 export const metadata: Metadata = {
-  title: 'Orbital Simulator Hub Community',
-  description: 'Join study rooms for astrophysics, orbital mechanics, aerospace, and NASA. Sign up to chat and learn together.',
+  title: 'Orbital Community',
+  description: 'Connect. Collaborate. Explore Beyond Earth. Orbital Community is the professional network and mission control center for the global space community.',
 };
 
 export default function RootLayout({
@@ -19,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans`}>
+      <body className={`${geist.variable} ${spaceGrotesk.variable} ${geistMono.variable} font-sans`}>
         <ThemeInitScript />
         <ThemeProvider>
           <SetupBanner />
