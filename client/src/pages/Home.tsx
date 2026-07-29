@@ -12,6 +12,7 @@ const FEATURES = [
   { href: "/learn/orbital-mechanics", icon: "🧠", title: "Orbital Mechanics", desc: "Master orbits, escape velocity, Hohmann transfer.", color: "cyan" },
   { href: "/ai-in-aerospace", icon: "🚀", title: "AI in Space", desc: "Autonomous spacecraft, Mars rover AI, Space AGI.", color: "pink" },
   { href: "/research/space-agi-lab", icon: "🔬", title: "Space-AGI Lab", desc: "5 pillars, humanoid robotics, multi-gravity AGI, live swarm simulator.", color: "cyan" },
+  { href: "/research/space-agi-math", icon: "🛰️", title: "PMP & AURORA", desc: "Spacecraft brain math: Pontryagin, MPC, mission analysis, autonomous guidance.", color: "cyan" },
 ];
 
 const QUICK_LINKS = [
@@ -26,6 +27,8 @@ const QUICK_LINKS = [
   { href: "/simulator/ai-astronaut-robot", label: "AI Robot Simulator" },
   { href: "/research/space-agi-lab", label: "Space-AGI Lab" },
   { href: "/research/space-agi-math", label: "Space-AGI Math" },
+  { href: "/research/space-agi-math", label: "PMP & AURORA" },
+  { href: "/simulator", label: "Live Orbital Mechanics Around Mars" },
   { href: "/recommended-books", label: "Books" },
   { href: "/space-shop", label: "Space Shop" },
   { href: "/privacy-policy", label: "Privacy" },
@@ -46,6 +49,7 @@ function getTodaysUpdates() {
     { href: "/simulator/ai-astronaut-robot", label: "🤖 AI Astronaut Robot Lab", desc: "Build and train AI space robots. World-first Space-AGI simulator.", isNew: true },
     { href: "/blog/how-space-will-build-ai-based-astronaut-robots-for-future-missions", label: "📄 AI Astronaut Robots", desc: "How NASA & SpaceX will build AI robots for Moon, Mars, deep space.", isNew: true },
     { href: "/research/space-agi-math", label: "🧮 Space-AGI Mathematics", desc: "MPC, LQR, Pontryagin, optimal control — graduate-level", isNew: false },
+    { href: "/research/space-agi-math", label: "🛰️ New Tab: PMP & AURORA", desc: "Mission analysis mode, spacecraft decision brain, autonomous guidance", isNew: true },
   ];
   const staticLinks = [
     { href: "/space-news", label: "📰 Daily Space News", desc: "NASA, Artemis, SpaceX, James Webb — updated daily", isNew: false },
@@ -63,6 +67,7 @@ const EXPLORE_BY_TOPIC = [
   { href: "/blog/category/space-engineering", icon: "⚙️", title: "Space Engineering" },
   { href: "/research/space-agi-lab", icon: "🔬", title: "Space-AGI Lab" },
   { href: "/research/space-agi-math", icon: "🧮", title: "Space-AGI Math" },
+  { href: "/research/space-agi-math", icon: "🛰️", title: "PMP & AURORA" },
   { href: "/learn/quantum-space", icon: "⚛", title: "Quantum & Space" },
   { href: "/ai-in-aerospace", icon: "🤖", title: "AI in Aerospace" },
   { href: "/learn/orbital-mechanics", icon: "🌌", title: "Orbital mechanics" },
@@ -131,6 +136,37 @@ export function Home() {
                 </Link>
               );
             })}
+          </div>
+        </section>
+
+        <section className="rounded-2xl p-5 md:p-6 mb-8 border w-full" style={{ background: "rgba(244,63,94,0.08)", borderColor: "rgba(244,63,94,0.35)" }}>
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-xl">🛰️</span>
+            <h2 className="text-base md:text-lg font-bold" style={{ color: "var(--text-primary)" }}>Live Orbital Mechanics Around Mars</h2>
+          </div>
+          <p className="text-sm leading-7 max-w-3xl" style={{ color: "var(--text-secondary)" }}>
+            Visualize Mars mission dynamics in real time: transfer arcs, approach geometry, orbital energy intuition, and communication delay impact.
+          </p>
+          <div className="grid gap-3 md:grid-cols-3 mt-4">
+            <div className="rounded-xl p-4" style={{ background: "rgba(15,23,42,0.35)", border: "1px solid rgba(244,63,94,0.25)" }}>
+              <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: "#f43f5e" }}>Transfer thinking</p>
+              <p className="text-sm leading-7" style={{ color: "var(--text-secondary)" }}>Hohmann-style reasoning from Earth orbit toward Mars capture geometry.</p>
+            </div>
+            <div className="rounded-xl p-4" style={{ background: "rgba(15,23,42,0.35)", border: "1px solid rgba(244,63,94,0.25)" }}>
+              <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: "#f43f5e" }}>Autonomy context</p>
+              <p className="text-sm leading-7" style={{ color: "var(--text-secondary)" }}>Understand why onboard guidance is essential under Mars communication delay.</p>
+            </div>
+            <div className="rounded-xl p-4" style={{ background: "rgba(15,23,42,0.35)", border: "1px solid rgba(244,63,94,0.25)" }}>
+              <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: "#f43f5e" }}>Mission analysis</p>
+              <p className="text-sm leading-7" style={{ color: "var(--text-secondary)" }}>Connect orbital mechanics with PMP/MPC decision-making for descent and docking phases.</p>
+            </div>
+          </div>
+          <div className="mt-4">
+            <Link href="/simulator">
+              <a className="inline-flex w-full justify-center px-4 py-3 rounded-xl font-semibold text-sm" style={{ background: "#f43f5e", color: "#fff" }}>
+                Open Live Orbital Mechanics Around Mars →
+              </a>
+            </Link>
           </div>
         </section>
 
@@ -224,6 +260,11 @@ export function Home() {
           <Link href="/ai-in-aerospace">
             <a className="px-5 py-2.5 rounded-xl font-semibold text-sm border-2 transition hover:opacity-95" style={{ borderColor: "var(--accent-pink)", color: "var(--text-on-accent)" }}>
               🚀 AI in Space
+            </a>
+          </Link>
+          <Link href="/research/space-agi-math">
+            <a className="px-5 py-2.5 rounded-xl font-semibold text-sm border-2 transition hover:opacity-95" style={{ borderColor: "var(--accent-cyan)", color: "var(--text-on-accent)" }}>
+              🛰️ PMP & AURORA Tab
             </a>
           </Link>
         </div>

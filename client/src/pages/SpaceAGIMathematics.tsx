@@ -154,6 +154,36 @@ export function SpaceAGIMathematics() {
         </p>
       </div>
 
+      {/* Live Orbital Mechanics Around Mars — full-frame */}
+      <section className="relative w-full overflow-hidden rounded-xl" style={{ height: "52vh", minHeight: "420px", background: "#0a0010", border: "2px solid rgba(205,68,0,0.7)" }}>
+        {/* starfield */}
+        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 20% 30%, rgba(255,255,255,0.04) 0%, transparent 60%), radial-gradient(ellipse at 80% 70%, rgba(255,255,255,0.03) 0%, transparent 50%)", backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='600' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='600' height='400' fill='%230a0010'/%3E%3Ccircle cx='50' cy='80' r='1' fill='white' opacity='.6'/%3E%3Ccircle cx='150' cy='30' r='1' fill='white' opacity='.8'/%3E%3Ccircle cx='300' cy='60' r='1.5' fill='white' opacity='.5'/%3E%3Ccircle cx='450' cy='120' r='1' fill='white' opacity='.7'/%3E%3Ccircle cx='530' cy='40' r='1' fill='white' opacity='.6'/%3E%3Ccircle cx='80' cy='200' r='1' fill='white' opacity='.4'/%3E%3Ccircle cx='200' cy='350' r='1.5' fill='white' opacity='.7'/%3E%3Ccircle cx='400' cy='300' r='1' fill='white' opacity='.5'/%3E%3Ccircle cx='560' cy='250' r='1' fill='white' opacity='.8'/%3E%3C/svg%3E\")", backgroundSize: "cover" }} />
+        {/* label */}
+        <div className="absolute top-4 left-0 right-0 text-center z-10">
+          <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: "rgba(255,120,50,0.9)" }}>Live Simulation</p>
+          <h2 className="text-xl font-bold" style={{ color: "#fff" }}>Orbital Mechanics Around Mars</h2>
+        </div>
+        {/* Mars sphere */}
+        <div className="absolute" style={{ top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "90px", height: "90px", borderRadius: "50%", background: "radial-gradient(circle at 38% 38%, #e8753a 0%, #cd4400 45%, #8b2000 80%, #3a0800 100%)", boxShadow: "0 0 40px rgba(205,68,0,0.6), 0 0 80px rgba(205,68,0,0.25), inset -12px -8px 20px rgba(0,0,0,0.5)" }} />
+        {/* orbit ring 1 */}
+        <div className="absolute" style={{ top: "50%", left: "50%", transform: "translate(-50%, -50%) rotateX(75deg)", width: "220px", height: "220px", borderRadius: "50%", border: "1.5px solid rgba(255,200,100,0.5)", boxShadow: "0 0 8px rgba(255,200,100,0.25)" }} />
+        {/* orbit ring 2 */}
+        <div className="absolute" style={{ top: "50%", left: "50%", transform: "translate(-50%, -50%) rotateX(75deg) rotateZ(40deg)", width: "340px", height: "300px", borderRadius: "50%", border: "1px solid rgba(100,200,255,0.35)", boxShadow: "0 0 6px rgba(100,200,255,0.2)" }} />
+        {/* orbit ring 3 */}
+        <div className="absolute" style={{ top: "50%", left: "50%", transform: "translate(-50%, -50%) rotateX(70deg) rotateZ(-20deg)", width: "480px", height: "420px", borderRadius: "50%", border: "1px solid rgba(200,100,255,0.25)" }} />
+        {/* satellite dot 1 */}
+        <div className="absolute" style={{ top: "calc(50% - 110px)", left: "50%", transform: "translateX(-50%)", width: "6px", height: "6px", borderRadius: "50%", background: "#ffe066", boxShadow: "0 0 8px #ffe066" }} />
+        {/* satellite dot 2 */}
+        <div className="absolute" style={{ top: "calc(50% + 80px)", left: "calc(50% + 130px)", width: "5px", height: "5px", borderRadius: "50%", background: "#64c8ff", boxShadow: "0 0 6px #64c8ff" }} />
+        {/* info strip */}
+        <div className="absolute bottom-0 left-0 right-0 flex justify-around items-center px-4 py-3 z-10" style={{ background: "rgba(0,0,0,0.65)", backdropFilter: "blur(6px)" }}>
+          <div className="text-center"><p className="text-xs" style={{ color: "rgba(255,120,50,0.8)" }}>Mars Radius</p><p className="text-sm font-bold text-white">3,389 km</p></div>
+          <div className="text-center"><p className="text-xs" style={{ color: "rgba(255,120,50,0.8)" }}>Low Mars Orbit</p><p className="text-sm font-bold text-white">~300 km</p></div>
+          <div className="text-center"><p className="text-xs" style={{ color: "rgba(255,120,50,0.8)" }}>Δv to orbit</p><p className="text-sm font-bold text-white">~3.55 km/s</p></div>
+          <a href="/simulator" className="hidden sm:inline-block text-xs px-3 py-1 rounded-full font-semibold" style={{ background: "rgba(205,68,0,0.85)", color: "#fff" }}>Open Simulator →</a>
+        </div>
+      </section>
+
       <section className="rounded-xl border-2 p-6" style={{ background: "var(--bg-card)", borderColor: "rgba(0,217,255,0.5)" }}>
         <p className="text-xs font-medium uppercase tracking-widest text-[var(--accent-cyan)] mb-2">PMP in Spaceflight</p>
         <h2 className="text-2xl font-bold mb-3" style={{ color: "var(--text-primary)" }}>Pontryagin Maximum Principle (PMP)</h2>
