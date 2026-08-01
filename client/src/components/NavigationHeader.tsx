@@ -21,6 +21,8 @@ const SPACE_AGI_SUBNAV = [
   { path: "/research/space-agi-roadmap", label: "Roadmap", title: "2025–2060+ timeline: AI satellites to interstellar" },
   { path: "/research/space-agi-explanation", label: "Explanation", title: "Plain-language guides — Math Explained tab for teens & college" },
   { path: "/research/space-agi-math", label: "Mathematics", title: "Optimal control, MPC, LQR, Space-AGI framework (graduate level)" },
+  { path: "/research/agi-asi-framework", label: "AGI/ASI Framework", title: "Conceptual module for AGI and ASI in future space systems" },
+  { path: "/research/pmp-nmpc-autonomous-control", label: "PMP–NMPC Framework", title: "Hybrid autonomous control: PMP + estimation + NMPC + reachability + CBF safety" },
 ];
 
 const BLOG_SUBNAV = [
@@ -52,7 +54,12 @@ function isSimulatorActive(location: string) {
 }
 
 function isSpaceAgiActive(location: string) {
-  return location === "/research/space-agi-lab" || location === "/research/space-agi-roadmap" || location === "/research/space-agi-math" || location === "/research/space-agi-explanation";
+  return location === "/research/space-agi-lab"
+    || location === "/research/space-agi-roadmap"
+    || location === "/research/space-agi-math"
+    || location === "/research/space-agi-explanation"
+    || location === "/research/agi-asi-framework"
+    || location === "/research/pmp-nmpc-autonomous-control";
 }
 
 function isBlogActive(location: string) {

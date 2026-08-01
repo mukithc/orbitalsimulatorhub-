@@ -62,6 +62,8 @@ import { SpaceAGIEngineeringLab } from "./pages/SpaceAGIEngineeringLab";
 import { SpaceAGIRoadmap } from "./pages/SpaceAGIRoadmap";
 import { SpaceAGIMathematics } from "./pages/SpaceAGIMathematics";
 import { SpaceAGIExplanation } from "./pages/SpaceAGIExplanation";
+import { AGIASIFramework } from "./pages/AGIASIFramework";
+import { PMPNMPCControlFramework } from "./pages/PMPNMPCControlFramework";
 import { SpaceAGISwarmSimulator } from "./pages/SpaceAGISwarmSimulator";
 import { AIAstronautRobotSimulator } from "./pages/AIAstronautRobotSimulator";
 import { QuantumSpaceAGISimulator } from "./pages/QuantumSpaceAGISimulator";
@@ -104,6 +106,8 @@ function App() {
           <Route path="/research/space-agi-roadmap" component={SpaceAGIRoadmap} />
           <Route path="/research/space-agi-math" component={SpaceAGIMathematics} />
           <Route path="/research/space-agi-explanation" component={SpaceAGIExplanation} />
+          <Route path="/research/agi-asi-framework" component={AGIASIFramework} />
+          <Route path="/research/pmp-nmpc-autonomous-control" component={PMPNMPCControlFramework} />
           <Route path="/welcome" component={Welcome} />
           <Route path="/privacy-policy" component={PrivacyPolicy} />
           <Route path="/learn/aerospace" component={AerospaceReference} />

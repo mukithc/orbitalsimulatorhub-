@@ -16,6 +16,8 @@ const footerLinks = [
   { href: "/astrobot", label: "AstroBot" },
   { href: "/learn/orbital-mechanics", label: "Orbital mechanics" },
   { href: "/research", label: "Research" },
+  { href: "/research/agi-asi-framework", label: "AGI/ASI" },
+  { href: "/research/pmp-nmpc-autonomous-control", label: "PMP-NMPC control" },
   { href: "/guide", label: "Guide" },
   { href: "/privacy-policy", label: "Privacy" },
 ];

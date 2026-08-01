@@ -201,6 +201,20 @@ export const SEO_CONFIGS: Record<string, SEOConfig> = {
     ogTitle: "Space-AGI Roadmap — From AI Satellites to Interstellar",
     lastUpdated: "2026-02-23T00:00:00Z",
   },
+  "/research/agi-asi-framework": {
+    path: "/research/agi-asi-framework",
+    title: "AGI and ASI in Space — Future AI Concepts for Autonomous Missions | Orbital Simulator Hub",
+    description: "A dedicated explainer for AGI and ASI in space, covering general autonomy, mission intelligence, and long-term visions for coordinated planetary and interplanetary systems.",
+    keywords: "AGI in space, ASI in space, artificial general intelligence space, artificial superintelligence space, future space AI, autonomous space intelligence",
+    lastUpdated: "2026-08-01T00:00:00Z",
+  },
+  "/research/pmp-nmpc-autonomous-control": {
+    path: "/research/pmp-nmpc-autonomous-control",
+    title: "PMP–NMPC Autonomous Control Framework — Resilient Spacecraft Guidance | Orbital Simulator Hub",
+    description: "Hybrid autonomous guidance architecture: PMP reference trajectory, EKF/UKF/MHE estimation, NMPC tracking, reachability guarantees, and CBF safety filtering for resilient space missions.",
+    keywords: "PMP NMPC spacecraft, autonomous spacecraft control, nonlinear model predictive control space, Pontryagin maximum principle trajectory, control barrier function spacecraft, reachability analysis space guidance, EKF UKF MHE navigation",
+    lastUpdated: "2026-07-23T00:00:00Z",
+  },
   "/careers": {
     path: "/careers",
     title: "Space Careers – How to Become Astronaut, Aerospace Engineer | Free Guide",
