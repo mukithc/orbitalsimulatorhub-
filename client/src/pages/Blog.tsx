@@ -78,7 +78,7 @@ export function Blog() {
           New articles added regularly covering NASA missions, space facts, satellite tutorials, and astronomy lessons. Bookmark this page and check back daily!
         </p>
         <p className="text-xs" style={{ color: "var(--text-muted)" }}>
-          <Link href="/blog/rss.xml"><a className="text-[var(--accent-cyan)] hover:underline">RSS Feed</a></Link> available for automatic updates.
+          <Link href="/rss.xml"><a className="text-[var(--accent-cyan)] hover:underline">RSS Feed</a></Link> available for automatic updates.
         </p>
       </section>
 

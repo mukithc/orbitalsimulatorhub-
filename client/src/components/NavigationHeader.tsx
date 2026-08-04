@@ -22,6 +22,7 @@ const SPACE_AGI_SUBNAV = [
   { path: "/research/space-agi-explanation", label: "Explanation", title: "Plain-language guides — Math Explained tab for teens & college" },
   { path: "/research/space-agi-math", label: "Mathematics", title: "Optimal control, MPC, LQR, Space-AGI framework (graduate level)" },
   { path: "/research/agi-asi-framework", label: "AGI/ASI Framework", title: "Conceptual module for AGI and ASI in future space systems" },
+  { path: "/research/asi-astronaut-mathematics", label: "ASI Astronaut Math", title: "15-level AI math foundation and Mars-grade autonomous astronaut equations" },
   { path: "/research/pmp-nmpc-autonomous-control", label: "PMP–NMPC Framework", title: "Hybrid autonomous control: PMP + estimation + NMPC + reachability + CBF safety" },
 ];
 
@@ -41,6 +42,7 @@ const NAV = [
   { path: "/research/space-agi-lab", label: "🧠 Space-AGI Lab", title: "Space-AGI Engineering Lab — autonomous spacecraft, decision intelligence, orbital math", subnav: SPACE_AGI_SUBNAV },
   { path: "/blog", label: "Blog", title: "Daily space news, aerospace, AI in space, research", subnav: BLOG_SUBNAV },
   { path: "/astrobot", label: "AstroBot", title: "Ask AstroBot anything about space, orbits, and satellites" },
+  { path: "/marketing-ai-agent", label: "Marketing AI", title: "Launch campaigns, growth strategies, and brand messaging for your space-tech brand" },
   { path: "/research", label: "Research", title: "NASA, Newton, orbital mechanics — for students and PhD researchers" },
 ];
 
@@ -59,6 +61,7 @@ function isSpaceAgiActive(location: string) {
     || location === "/research/space-agi-math"
     || location === "/research/space-agi-explanation"
     || location === "/research/agi-asi-framework"
+    || location === "/research/asi-astronaut-mathematics"
     || location === "/research/pmp-nmpc-autonomous-control";
 }
 

@@ -208,6 +208,13 @@ export const SEO_CONFIGS: Record<string, SEOConfig> = {
     keywords: "AGI in space, ASI in space, artificial general intelligence space, artificial superintelligence space, future space AI, autonomous space intelligence",
     lastUpdated: "2026-08-01T00:00:00Z",
   },
+  "/research/asi-astronaut-mathematics": {
+    path: "/research/asi-astronaut-mathematics",
+    title: "ASI Astronaut Mathematics — Mars Autonomous Mission Equations and AI Control Stack | Orbital Simulator Hub",
+    description: "A dedicated module for ASI-oriented astronaut autonomy: 15-level AI math foundations, spacecraft dynamics, PMP, HJB, MPC, Bayesian estimation, and conceptual unified mission objective for Mars travel.",
+    keywords: "ASI astronaut mathematics, mars autonomous spacecraft math, AI astronaut equations, PMP HJB MPC Mars mission, spacecraft dynamics ASI, Bayesian estimation space autonomy, multi-agent ASI space",
+    lastUpdated: "2026-08-04T00:00:00Z",
+  },
   "/research/pmp-nmpc-autonomous-control": {
     path: "/research/pmp-nmpc-autonomous-control",
     title: "PMP–NMPC Autonomous Control Framework — Resilient Spacecraft Guidance | Orbital Simulator Hub",

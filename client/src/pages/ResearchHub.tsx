@@ -56,6 +56,7 @@ const CATEGORIES = [
       { href: "/research/space-agi-explanation", label: "Space-AGI Explanation", summary: "Plain-language guides. Math Explained tab — ISS, Starlink, Mars rover examples for teens & college." },
       { href: "/research/space-agi-math", label: "Space-AGI Mathematics (Full)", summary: "Optimal control, Pontryagin, MPC, LQR. Knowledge-energy optimization. Graduate-level credible." },
       { href: "/research/agi-asi-framework", label: "AGI/ASI Framework", summary: "Separate conceptual module for AGI and ASI in future space systems." },
+      { href: "/research/asi-astronaut-mathematics", label: "ASI Astronaut Mathematics", summary: "15-level AI math stack plus Mars autonomous astronaut system equations and unified mission objective." },
       { href: "/research/pmp-nmpc-autonomous-control", label: "PMP–NMPC Autonomous Control Framework", summary: "Hybrid architecture: PMP references, state estimation, NMPC tracking, reachability, and CBF safety." },
       { href: "/research/space-agi-doctrine", label: "Space-AGI Doctrine (Latest)", summary: "Orbital mechanics + autonomous decision models. Delayed MDP, Bayesian belief, energy-aware planning." },
       { href: "/research/future-civilization", label: "Future of Space Civilization", summary: "From Earth orbit to interstellar — humanity's next chapter." },

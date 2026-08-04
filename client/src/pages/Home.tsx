@@ -12,6 +12,7 @@ const FEATURES = [
   { href: "/learn/orbital-mechanics", icon: "🧠", title: "Orbital Mechanics", desc: "Master orbits, escape velocity, Hohmann transfer.", color: "cyan" },
   { href: "/ai-in-aerospace", icon: "🚀", title: "AI in Space", desc: "Autonomous spacecraft, Mars rover AI, Space AGI.", color: "pink" },
   { href: "/research/space-agi-lab", icon: "🔬", title: "Space-AGI Lab", desc: "5 pillars, humanoid robotics, multi-gravity AGI, live swarm simulator.", color: "cyan" },
+  { href: "/marketing-ai-agent", icon: "📣", title: "Marketing AI Agent", desc: "Launch campaigns, content strategy, brand messaging, and growth ideas.", color: "pink" },
 ];
 
 const QUICK_LINKS = [
@@ -26,6 +27,7 @@ const QUICK_LINKS = [
   { href: "/simulator/ai-astronaut-robot", label: "AI Robot Simulator" },
   { href: "/research/space-agi-lab", label: "Space-AGI Lab" },
   { href: "/research/space-agi-math", label: "Space-AGI Math" },
+  { href: "/research/asi-astronaut-mathematics", label: "ASI Astronaut Math" },
   { href: "/recommended-books", label: "Books" },
   { href: "/space-shop", label: "Space Shop" },
   { href: "/privacy-policy", label: "Privacy" },
@@ -63,6 +65,7 @@ const EXPLORE_BY_TOPIC = [
   { href: "/blog/category/space-engineering", icon: "⚙️", title: "Space Engineering" },
   { href: "/research/space-agi-lab", icon: "🔬", title: "Space-AGI Lab" },
   { href: "/research/space-agi-math", icon: "🧮", title: "Space-AGI Math" },
+  { href: "/research/asi-astronaut-mathematics", icon: "🛰", title: "ASI Astronaut Math" },
   { href: "/learn/quantum-space", icon: "⚛", title: "Quantum & Space" },
   { href: "/ai-in-aerospace", icon: "🤖", title: "AI in Aerospace" },
   { href: "/learn/orbital-mechanics", icon: "🌌", title: "Orbital mechanics" },
@@ -172,6 +175,23 @@ export function Home() {
           </div>
         </section>
 
+        <section className="rounded-2xl p-5 md:p-6 mb-8 border" style={{ background: "rgba(168,85,247,0.10)", borderColor: "rgba(168,85,247,0.28)" }}>
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-xl">🛰</span>
+            <h2 className="text-base md:text-lg font-bold" style={{ color: "var(--text-primary)" }}>New: ASI Astronaut Mathematics</h2>
+          </div>
+          <p className="text-sm leading-7 max-w-3xl" style={{ color: "var(--text-secondary)" }}>
+            Explore the full 15-level AI math foundation plus Mars-grade autonomous astronaut equations, from PMP and HJB to Bayesian estimation and multi-agent coordination.
+          </p>
+          <div className="mt-3">
+            <Link href="/research/asi-astronaut-mathematics">
+              <a className="inline-flex px-4 py-2 rounded-xl font-semibold text-sm" style={{ background: "var(--accent-primary)", color: "var(--text-on-accent)" }}>
+                Open ASI Astronaut Mathematics →
+              </a>
+            </Link>
+          </div>
+        </section>
+
         <section className="rounded-2xl p-5 md:p-6 mb-8 border" style={{ background: "rgba(15,23,42,0.28)", borderColor: "rgba(0,217,255,0.16)" }}>
           <div className="flex items-center gap-2 mb-3">
             <span className="text-xl">📰</span>
@@ -231,6 +251,43 @@ export function Home() {
           <ShareBar path="/" showRedditSubs />
         </section>
 
+        <section className="glass-panel rounded-2xl p-5 md:p-6 mb-8">
+          <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] mb-2" style={{ color: "var(--accent-cyan)" }}>Future-ready research stack</p>
+              <h2 className="text-lg md:text-xl font-bold" style={{ color: "var(--text-primary)" }}>ASI, AGI, and autonomous control in one immersive experience</h2>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <span className="orbit-chip">ASI / AGI</span>
+              <span className="orbit-chip">PMP + NMPC</span>
+              <span className="orbit-chip">Space robotics</span>
+            </div>
+          </div>
+          <div className="grid gap-3 md:grid-cols-3">
+            <Link href="/research/agi-asi-framework">
+              <a className="block rounded-xl p-4 border transition hover:-translate-y-0.5" style={{ background: "rgba(255,255,255,0.04)", borderColor: "rgba(0,217,255,0.2)" }}>
+                <div className="text-xs font-semibold uppercase tracking-[0.24em] mb-2" style={{ color: "var(--accent-cyan)" }}>ASI / AGI</div>
+                <h3 className="font-bold mb-2" style={{ color: "var(--text-primary)" }}>A conceptual framework for advanced space intelligence</h3>
+                <p className="text-sm leading-6" style={{ color: "var(--text-secondary)" }}>Explore how AGI-like reasoning and ASI-style coordination could evolve for space missions, autonomy, and discovery.</p>
+              </a>
+            </Link>
+            <Link href="/research/pmp-nmpc-autonomous-control">
+              <a className="block rounded-xl p-4 border transition hover:-translate-y-0.5" style={{ background: "rgba(255,255,255,0.04)", borderColor: "rgba(0,217,255,0.2)" }}>
+                <div className="text-xs font-semibold uppercase tracking-[0.24em] mb-2" style={{ color: "var(--accent-cyan)" }}>Autonomy</div>
+                <h3 className="font-bold mb-2" style={{ color: "var(--text-primary)" }}>PMP + NMPC for resilient autonomous spacecraft</h3>
+                <p className="text-sm leading-6" style={{ color: "var(--text-secondary)" }}>See how optimal control, estimation, and real-time correction can work together for deep-space missions.</p>
+              </a>
+            </Link>
+            <Link href="/research/space-agi-lab">
+              <a className="block rounded-xl p-4 border transition hover:-translate-y-0.5" style={{ background: "rgba(255,255,255,0.04)", borderColor: "rgba(0,217,255,0.2)" }}>
+                <div className="text-xs font-semibold uppercase tracking-[0.24em] mb-2" style={{ color: "var(--accent-cyan)" }}>Research Hub</div>
+                <h3 className="font-bold mb-2" style={{ color: "var(--text-primary)" }}>A full research experience for the next era of space systems</h3>
+                <p className="text-sm leading-6" style={{ color: "var(--text-secondary)" }}>Jump into the broader platform for orbital mechanics, robotics, AI, and future space intelligence.</p>
+              </a>
+            </Link>
+          </div>
+        </section>
+ 
         {/* 5 main features — Simulator, AstroBot, Orbital Mechanics, AI in Space, Space-AGI Lab */}
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
           {FEATURES.map((f) => (

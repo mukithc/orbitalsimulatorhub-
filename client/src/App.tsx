@@ -64,6 +64,7 @@ import { SpaceAGIMathematics } from "./pages/SpaceAGIMathematics";
 import { SpaceAGIExplanation } from "./pages/SpaceAGIExplanation";
 import { AGIASIFramework } from "./pages/AGIASIFramework";
 import { PMPNMPCControlFramework } from "./pages/PMPNMPCControlFramework";
+import { ASIAstronautMathematics } from "./pages/ASIAstronautMathematics";
 import { SpaceAGISwarmSimulator } from "./pages/SpaceAGISwarmSimulator";
 import { AIAstronautRobotSimulator } from "./pages/AIAstronautRobotSimulator";
 import { QuantumSpaceAGISimulator } from "./pages/QuantumSpaceAGISimulator";
@@ -72,16 +73,20 @@ import { QuantumSpaceAGIScenario } from "./pages/QuantumSpaceAGIScenario";
 import { QuantumSpaceAGICompare } from "./pages/QuantumSpaceAGICompare";
 import { FutureSpaceCivilization } from "./pages/FutureSpaceCivilization";
 import { Next100Years } from "./pages/Next100Years";
+import { MarketingAIAgent } from "./pages/MarketingAIAgent";
 import { Welcome } from "./pages/Welcome";
 import { PrivacyPolicy } from "./pages/PrivacyPolicy";
 import { NotFound } from "./pages/NotFound";
 
 function App() {
   return (
-    <div className="min-h-screen blueprint-bg flex flex-col">
+    <div className="app-shell min-h-screen blueprint-bg flex flex-col">
+      <div className="ambient-orb ambient-orb-1" />
+      <div className="ambient-orb ambient-orb-2" />
+      <div className="orbital-ring" />
       <SEOHead />
       <NavigationHeader />
-      <main className="container mx-auto px-4 py-6 max-w-7xl flex-1">
+      <main className="container mx-auto px-4 py-6 max-w-7xl flex-1 relative">
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/play" component={PlayLearn} />
@@ -108,6 +113,8 @@ function App() {
           <Route path="/research/space-agi-explanation" component={SpaceAGIExplanation} />
           <Route path="/research/agi-asi-framework" component={AGIASIFramework} />
           <Route path="/research/pmp-nmpc-autonomous-control" component={PMPNMPCControlFramework} />
+          <Route path="/research/asi-astronaut-mathematics" component={ASIAstronautMathematics} />
+          <Route path="/marketing-ai-agent" component={MarketingAIAgent} />
           <Route path="/welcome" component={Welcome} />
           <Route path="/privacy-policy" component={PrivacyPolicy} />
           <Route path="/learn/aerospace" component={AerospaceReference} />

@@ -20,7 +20,7 @@ export function SpaceNews() {
 
       <div className="rounded-xl border-2 p-4" style={{ background: "var(--bg-card)", borderColor: "var(--accent-cyan)" }}>
         <p className="font-medium" style={{ color: "var(--text-primary)" }}>📡 Fresh space news every day.</p>
-        <p className="text-sm mt-1" style={{ color: "var(--text-secondary)" }}>We publish space mission news, satellite tutorials, space facts, and astronomy lessons. Bookmark this page or follow our <Link href="/blog/rss.xml"><a className="text-[var(--accent-cyan)] hover:underline">RSS feed</a></Link> for daily updates.</p>
+        <p className="text-sm mt-1" style={{ color: "var(--text-secondary)" }}>We publish space mission news, satellite tutorials, space facts, and astronomy lessons. Bookmark this page or follow our <Link href="/rss.xml"><a className="text-[var(--accent-cyan)] hover:underline">RSS feed</a></Link> for daily updates.</p>
       </div>
 
       <section>
