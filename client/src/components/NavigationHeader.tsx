@@ -40,6 +40,7 @@ const NAV = [
   { path: "/blog", label: "Blog", title: "Daily space news, aerospace, AI in space, research", subnav: BLOG_SUBNAV },
   { path: "/astrobot", label: "AstroBot", title: "Ask AstroBot anything about space, orbits, and satellites" },
   { path: "/research", label: "Research", title: "NASA, Newton, orbital mechanics — for students and PhD researchers" },
+  { path: "/space-intelligence", label: "🤖 Space Intelligence", title: "ASI and AGI — Autonomous Space Intelligence and Artificial General Intelligence in aerospace" },
 ];
 
 function isMissionsActive(location: string) {
