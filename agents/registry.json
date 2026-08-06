@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "totalAgents": 137,
+  "operatingRules": {
+    "productionBranch": "main",
+    "stagingBranch": "pre-production",
+    "directProductionWrites": false,
+    "requiredChecks": ["npm run test:run -- --passWithNoTests", "npm run build"],
+    "promotion": "Only a release owner may fast-forward tested pre-production into main."
+  },
+  "domains": [
+    { "id": "orchestration", "count": 1, "roles": ["chief-orchestrator"] },
+    { "id": "domain-leads", "count": 12, "roles": ["frontend-lead", "threejs-lead", "physics-lead", "astrobot-lead", "research-lead", "data-lead", "ux-lead", "seo-lead", "performance-lead", "qa-lead", "security-lead", "devops-lead"] },
+    { "id": "frontend", "count": 12, "roles": ["design-system", "react-components", "routing", "forms", "state-management", "responsive-ui", "interaction-design", "accessibility-ui", "typography", "visual-polish", "error-states", "client-integration"] },
+    { "id": "threejs-graphics", "count": 12, "roles": ["r3f-scenes", "earth-rendering", "planet-rendering", "spacecraft-models", "orbit-visualization", "shader-effects", "camera-motion", "post-processing", "particle-systems", "lod-optimization", "webgl-accessibility", "model-pipeline"] },
+    { "id": "space-simulation", "count": 12, "roles": ["orbital-mechanics", "propagation", "maneuvers", "trajectory-planning", "attitude-dynamics", "spacecraft-health", "collision-analysis", "constellation-modeling", "navigation-estimation", "mission-physics", "simulation-validation", "units-and-constants"] },
+    { "id": "astrobot-ai", "count": 12, "roles": ["conversation-ux", "deterministic-calculations", "retrieval", "citations", "prompt-safety", "response-rendering", "agent-actions", "knowledge-graph", "voice-interface", "multimodal-planning", "evaluation", "human-handoff"] },
+    { "id": "research-content", "count": 12, "roles": ["source-validation", "orbital-research", "robotics-research", "mars-research", "satellite-research", "ai-research", "control-research", "quantum-research", "math-editor", "reference-manager", "content-review", "research-visualization"] },
+    { "id": "seo-growth", "count": 12, "roles": ["metadata", "structured-data", "sitemap", "robots", "open-graph", "performance-seo", "content-discovery", "analytics", "linkedin-editor", "growth-experiments", "search-quality", "conversion-ux"] },
+    { "id": "platform-data", "count": 12, "roles": ["api-contracts", "database-schema", "data-ingestion", "tle-data-integration", "telemetry-pipelines", "cache-strategy", "background-jobs", "event-modeling", "api-observability", "integration-testing", "privacy-engineering", "data-governance"] },
+    { "id": "quality-security", "count": 20, "roles": ["unit-tests", "integration-tests", "e2e-tests", "visual-regression", "cross-browser", "mobile-qa", "keyboard-accessibility", "screen-reader", "performance-audit", "web-vitals", "dependency-audit", "secret-scanning", "api-security", "xss-review", "auth-review", "data-privacy", "threat-modeling", "code-review", "release-validation", "incident-response"] },
+    { "id": "release-governance", "count": 8, "roles": ["ci-maintainer", "preview-deployments", "production-promoter", "rollback-manager", "release-notes", "observability", "environment-manager", "repository-governance"] },
+    { "id": "documentation", "count": 12, "roles": ["architecture-docs", "api-docs", "simulator-docs", "research-docs", "contributor-guide", "runbooks", "deployment-docs", "security-docs", "testing-docs", "design-docs", "agent-docs", "changelog"] }
+  ],
+  "pathOwnership": {
+    "frontend": ["client/src/components/**", "client/src/pages/**", "client/src/index.css"],
+    "threejs-graphics": ["client/src/components/**/*Scene*.tsx", "client/src/components/EarthVisualization.tsx"],
+    "space-simulation": ["client/src/orbitalUtils.ts", "client/src/orbitalClient.ts", "shared/**"],
+    "astrobot-ai": ["client/src/pages/AstroBot.tsx", "client/src/components/astrobot/**", "server/astrobot*"],
+    "research-content": ["docs/**", "client/src/pages/AGIASIFramework.tsx", "client/src/pages/ASIAstronautMathematics.tsx"],
+    "seo-growth": ["client/src/data/seo-config.ts", "client/public/**", "scripts/generate-rss.js"],
+    "quality-security": ["tests/**", ".github/workflows/**"],
+    "release-governance": [".github/workflows/**", "vercel.json"]
+  }
+}

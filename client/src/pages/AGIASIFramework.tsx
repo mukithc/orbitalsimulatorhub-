@@ -27,26 +27,31 @@ const intelligenceStack = [
     title: "Perception and state estimation",
     description: "Fuse sensor streams into calibrated beliefs about vehicle state, terrain, orbital environment, instruments, and system health.",
     methods: "Bayesian filtering, sensor validation, uncertainty estimation, fault detection",
+    href: "/research/asi-astronaut-mathematics",
   },
   {
     title: "World models and knowledge",
     description: "Maintain predictive models that connect observations to dynamics, mission context, scientific hypotheses, and evidence provenance.",
     methods: "Digital twins, physics-informed models, knowledge graphs, model calibration",
+    href: "/research/space-agi-lab",
   },
   {
     title: "Planning and control",
     description: "Translate mission goals into constrained trajectories, observation schedules, experiment portfolios, and contingency plans.",
     methods: "Optimal control, MPC, scheduling, reachability analysis, constraint solving",
+    href: "/research/pmp-nmpc-autonomous-control",
   },
   {
     title: "Scientific reasoning",
     description: "Prioritize measurements that reduce uncertainty, test hypotheses, distinguish correlations from causes, and communicate confidence.",
     methods: "Information gain, causal inference, experiment design, uncertainty-aware reporting",
+    href: "/research/asi-astronaut-mathematics",
   },
   {
     title: "Coordination and oversight",
     description: "Coordinate specialists, vehicles, and human operators while preserving authority boundaries, traceability, and safe escalation paths.",
     methods: "Role-based agents, consensus protocols, audit logs, approval gates, runtime monitoring",
+    href: "/research/space-agi-roadmap",
   },
 ];
 
@@ -134,12 +139,18 @@ export function AGIASIFramework() {
         <h2 className="text-xl font-bold mb-5" style={{ color: "var(--text-primary)" }}>From autonomous operations to scientific mission intelligence</h2>
         <div className="grid gap-4 md:grid-cols-2">
           {intelligenceStack.map((layer, index) => (
-            <article key={layer.title} className="rounded-lg border p-4" style={{ borderColor: "var(--border-color)", background: "rgba(255,255,255,0.025)" }}>
-              <p className="text-xs font-bold" style={{ color: "var(--accent-gold)" }}>LAYER {index + 1}</p>
-              <h3 className="font-bold mt-1" style={{ color: "var(--text-primary)" }}>{layer.title}</h3>
-              <p className="text-sm leading-6 mt-2" style={{ color: "var(--text-secondary)" }}>{layer.description}</p>
-              <p className="text-xs leading-5 mt-3" style={{ color: "var(--accent-cyan)" }}>{layer.methods}</p>
-            </article>
+            <Link key={layer.title} href={layer.href}>
+              <a
+                className="block rounded-lg border p-4 transition focus:outline-none focus:ring-2 focus:ring-[var(--accent-cyan)]"
+                style={{ borderColor: "var(--border-color)", background: "rgba(255,255,255,0.025)" }}
+              >
+                <p className="text-xs font-bold" style={{ color: "var(--accent-gold)" }}>LAYER {index + 1}</p>
+                <h3 className="font-bold mt-1" style={{ color: "var(--text-primary)" }}>{layer.title}</h3>
+                <p className="text-sm leading-6 mt-2" style={{ color: "var(--text-secondary)" }}>{layer.description}</p>
+                <p className="text-xs leading-5 mt-3" style={{ color: "var(--accent-cyan)" }}>{layer.methods}</p>
+                <span className="inline-block text-xs font-semibold mt-4" style={{ color: "var(--text-primary)" }}>Explore this layer →</span>
+              </a>
+            </Link>
           ))}
         </div>
       </section>
