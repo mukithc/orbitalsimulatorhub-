@@ -86,6 +86,45 @@ export function Home() {
   return (
     <div className="home-page-wrapper -mx-4 px-4 py-2 rounded-2xl">
       <div className="max-w-4xl mx-auto">
+        <section className="home-space-hero rounded-3xl px-6 py-12 sm:py-16 text-center mb-8 overflow-hidden relative" style={{ boxShadow: "0 18px 56px rgba(0,0,0,0.32)" }}>
+          <Suspense fallback={<div className="absolute inset-0 hero-gradient" aria-hidden="true" />}>
+            <HomeSpaceScene />
+          </Suspense>
+          <div className="relative z-10 max-w-2xl mx-auto">
+            <p className="text-xs font-medium uppercase tracking-[0.2em] text-cyan-100 mb-3">Interactive space learning and mission simulation</p>
+            <h1 className="text-3xl sm:text-5xl font-bold text-white mb-3 leading-tight">
+              Explore space. Simulate missions. Understand the future.
+            </h1>
+            <p className="text-base sm:text-lg text-slate-100 max-w-xl mx-auto mb-6">
+              Learn orbital mechanics, fly interactive satellite scenarios, and explore research on autonomous space systems.
+            </p>
+            <div className="grid gap-3 sm:grid-cols-3 text-left">
+              <Link href="/learn/orbital-mechanics">
+                <a className="home-journey-card">
+                  <span className="text-xl">📘</span>
+                  <strong>Learn</strong>
+                  <span>Build orbital intuition</span>
+                </a>
+              </Link>
+              <Link href="/simulator">
+                <a className="home-journey-card home-journey-card-primary">
+                  <span className="text-xl">🛰</span>
+                  <strong>Simulate</strong>
+                  <span>Fly an orbit scenario</span>
+                </a>
+              </Link>
+              <Link href="/research/space-agi-lab">
+                <a className="home-journey-card">
+                  <span className="text-xl">🔬</span>
+                  <strong>Research</strong>
+                  <span>Explore future systems</span>
+                </a>
+              </Link>
+            </div>
+            <p className="text-xs text-slate-300 mt-5">Educational simulations and conceptual research, designed for students and curious explorers.</p>
+          </div>
+        </section>
+
         {/* ═══ NEWEST BLOG POST — Prominent at top ═══ */}
         {latestPost && (
           <section className="mb-6 animate-fade-in-up">
@@ -215,46 +254,6 @@ export function Home() {
                 </a>
               </Link>
             ))}
-          </div>
-        </section>
-
-        {/* Hero — Intelligence for the Space Age */}
-        <section className="home-space-hero rounded-3xl px-6 py-12 sm:py-16 text-center mb-8 overflow-hidden relative" style={{ boxShadow: "0 18px 56px rgba(0,0,0,0.32)" }}>
-          <Suspense fallback={<div className="absolute inset-0 hero-gradient" aria-hidden="true" />}>
-            <HomeSpaceScene />
-          </Suspense>
-          <div className="relative z-10 max-w-2xl mx-auto">
-            <p className="text-xs font-medium uppercase tracking-[0.2em] text-cyan-100 mb-3">Space Engineering • AI • Quantum • Daily News • Futuristic</p>
-            <h1 className="text-3xl sm:text-5xl font-bold text-white mb-3 leading-tight">
-              OrbitalSimulatorHub — Intelligence for the Space Age
-            </h1>
-            <p className="text-base sm:text-lg text-slate-100 max-w-xl mx-auto mb-6">
-              Space AGI, orbital mechanics, quantum computing in space, aerospace formulas, and interactive mission learning.
-            </p>
-            <div className="flex flex-wrap justify-center gap-2 mb-5">
-              <Link href="/simulator">
-                <a className="px-5 py-2.5 rounded-xl font-semibold text-sm transition home-hero-primary">
-                  🛰 Open Orbital Simulator
-                </a>
-              </Link>
-              <Link href="/astrobot">
-                <a className="px-5 py-2.5 rounded-xl font-semibold text-sm border transition home-hero-secondary">
-                  🤖 Ask AstroBot
-                </a>
-              </Link>
-              <Link href="/research/space-agi-lab">
-                <a className="px-5 py-2.5 rounded-xl font-semibold text-sm border transition home-hero-secondary">
-                  🔬 Space-AGI Lab
-                </a>
-              </Link>
-              <Link href="/ai-in-aerospace">
-                <a className="px-5 py-2.5 rounded-xl font-semibold text-sm border transition home-hero-secondary">
-                  🚀 AI in Space
-                </a>
-              </Link>
-            </div>
-            <p className="text-xs text-slate-300">Trusted by students, engineers, and researchers worldwide</p>
-            <ShareBar path="/" showRedditSubs />
           </div>
         </section>
 
