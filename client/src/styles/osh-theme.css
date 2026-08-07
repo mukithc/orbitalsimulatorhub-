@@ -1,0 +1,86 @@
+/* Orbital Simulator Hub — design tokens
+   Replaces the six switchable themes in index.css with one identity.
+   Import once in main.tsx, after Tailwind's base layer. */
+
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+:root {
+  /* surface */
+  --osh-void: #04060a;
+  --osh-bg: #06080d;
+  --osh-panel: rgba(255, 255, 255, 0.028);
+  --osh-panel-solid: #0b0f16;
+  --osh-line: rgba(255, 255, 255, 0.08);
+  --osh-line-strong: rgba(255, 255, 255, 0.14);
+
+  /* ink */
+  --osh-text: #e9ecf2;
+  --osh-muted: rgba(233, 236, 242, 0.62);
+  --osh-faint: rgba(233, 236, 242, 0.34);
+
+  /* two accents only: amber = controls & primary, cyan = data & ambient */
+  --osh-amber: #efa24a;
+  --osh-amber-dim: rgba(239, 162, 74, 0.14);
+  --osh-cyan: #4ac8e0;
+  --osh-cyan-dim: rgba(74, 200, 224, 0.12);
+
+  /* type */
+  --osh-sans: "Archivo", system-ui, sans-serif;
+  --osh-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* geometry */
+  --osh-r-sm: 8px;
+  --osh-r-md: 14px;
+  --osh-r-lg: 20px;
+  --osh-r-pill: 999px;
+
+  /* motion */
+  --osh-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --osh-fast: 160ms;
+  --osh-slow: 420ms;
+}
+
+html {
+  background: var(--osh-void);
+  color-scheme: dark;
+}
+
+body {
+  background: var(--osh-bg);
+  color: var(--osh-text);
+  font-family: var(--osh-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* every number, label and formula is mono */
+.osh-num {
+  font-family: var(--osh-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* frosted content plane that floats over the WebGL backdrop */
+.osh-glass {
+  background: var(--osh-panel);
+  border: 1px solid var(--osh-line);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+}
+
+a {
+  color: var(--osh-cyan);
+  text-decoration: none;
+  transition: color var(--osh-fast) var(--osh-ease);
+}
+a:hover {
+  color: var(--osh-amber);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
