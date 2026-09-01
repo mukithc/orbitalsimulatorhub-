@@ -6,6 +6,7 @@ import { ErrorBoundary } from "./ErrorBoundary";
 import { ThemeProvider } from "./lib/ThemeContext";
 import App from "./App";
 import "./index.css";
+import "./styles/osh-theme.css";
 
 // Apply saved theme before React renders to prevent flash
 (function () {

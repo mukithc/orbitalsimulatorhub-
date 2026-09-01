@@ -127,7 +127,7 @@ export function Home() {
                 ? { background: "rgba(0,217,255,0.12)", borderColor: "rgba(0,217,255,0.4)" }
                 : { background: "rgba(255,255,255,0.05)", borderColor: "rgba(255,255,255,0.1)" };
               return (
-                <Link key={u.href} href={u.href}>
+                <Link key={`${u.href}-${u.label}`} href={u.href}>
                   <a className={linkClass} style={linkStyle}>
                     {u.isNew && <span className="absolute top-2 right-2 text-[10px] font-bold px-1.5 py-0.5 rounded" style={{ background: "var(--accent-cyan)", color: "#0f172a" }}>NEW</span>}
                     <span className="font-bold text-sm" style={{ color: "var(--accent-cyan)" }}>{u.label} →</span>
@@ -317,7 +317,7 @@ export function Home() {
           <h3 className="text-sm font-bold uppercase tracking-wider mb-3" style={{ color: "var(--text-secondary)" }}>📡 Quick links</h3>
           <div className="flex flex-wrap gap-2">
             {QUICK_LINKS.map((l) => (
-              <Link key={l.href} href={l.href}>
+              <Link key={`${l.href}-${l.label}`} href={l.href}>
                 <a className="px-3 py-1.5 rounded-lg text-sm font-medium transition" style={{ background: "var(--bg-surface)", color: "var(--text-primary)" }}>
                   {l.label}
                 </a>
@@ -410,12 +410,12 @@ export function Home() {
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-4">
             {EXPLORE_BY_TOPIC.map((t) => (
               (t as { external?: boolean }).external ? (
-                <a key={t.href} href={t.href} className="flex items-center gap-2 p-2 rounded-lg text-sm transition hover:opacity-80" style={{ background: "var(--bg-surface)" }} target="_blank" rel="noopener noreferrer">
+                <a key={`${t.href}-${t.title}`} href={t.href} className="flex items-center gap-2 p-2 rounded-lg text-sm transition hover:opacity-80" style={{ background: "var(--bg-surface)" }} target="_blank" rel="noopener noreferrer">
                   <span>{t.icon}</span>
                   <span style={{ color: "var(--text-primary)" }}>{t.title}</span>
                 </a>
               ) : (
-                <Link key={t.href} href={t.href}>
+                <Link key={`${t.href}-${t.title}`} href={t.href}>
                   <a className="flex items-center gap-2 p-2 rounded-lg text-sm transition hover:opacity-80" style={{ background: "var(--bg-surface)" }}>
                     <span>{t.icon}</span>
                     <span style={{ color: "var(--text-primary)" }}>{t.title}</span>

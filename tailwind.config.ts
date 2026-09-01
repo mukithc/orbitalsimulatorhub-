@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { oshTheme } from "./tailwind.osh";
 
 export default {
   content: ["./client/index.html", "./client/src/**/*.{ts,tsx}"],
@@ -11,10 +12,16 @@ export default {
           gold: "#ffd700",
         },
         muted: "#6b7280",
+        ...oshTheme.colors,
       },
       fontFamily: {
-        mono: ["Space Mono", "monospace"],
-        sans: ["Inter", "system-ui", "sans-serif"],
+        ...oshTheme.fontFamily,
+      },
+      borderRadius: {
+        ...oshTheme.borderRadius,
+      },
+      transitionTimingFunction: {
+        ...oshTheme.transitionTimingFunction,
       },
     },
   },
