@@ -5,7 +5,7 @@
     <link>https://www.orbitalsimulatorhub.com/blog</link>
     <description>Space technology, orbital mechanics, spacecraft simulation, robotics, artificial intelligence, and Space-AGI research.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Nov 2026 13:55:26 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 14:11:25 GMT</lastBuildDate>
     <generator>OrbitalSimulatorHub RSS Generator</generator>
     <atom:link href="https://www.orbitalsimulatorhub.com/rss.xml" rel="self" type="application/rss+xml" />
     <image>
@@ -13,6 +13,15 @@
       <title>OrbitalSimulatorHub</title>
       <link>https://www.orbitalsimulatorhub.com</link>
     </image>
+    <item>
+      <title>Daily Space News - 2026-11-04</title>
+      <link>https://www.orbitalsimulatorhub.com/blog/space-news-2026-11-04</link>
+      <guid isPermaLink="true">https://www.orbitalsimulatorhub.com/blog/space-news-2026-11-04</guid>
+      <description>4 recent, attributed space headlines, grouped by planet and mission topic.</description>
+      <pubDate>Wed, 04 Nov 2026 00:00:00 GMT</pubDate>
+      <category>nasa-news</category>
+      <author>OrbitalSimulatorHub</author>
+    </item>
     <item>
       <title>Daily Space News - 2026-11-03</title>
       <link>https://www.orbitalsimulatorhub.com/blog/space-news-2026-11-03</link>
