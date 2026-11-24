@@ -1,123 +1,57 @@
 [
   {
-    "slug": "space-news-2026-11-22",
-    "title": "Daily Space News - 2026-11-22",
-    "excerpt": "8 recent, attributed space headlines, grouped by planet and mission topic.",
-    "content": "Daily space news desk for 2026-11-22 (America/New_York).\n\nAttributed headlines published within the last 7 days, because fewer than four headlines fell inside 48 hours. Follow each source for the full reporting; publication dates are not necessarily event dates.\n\n## Earth\n\n- [Dragon Returns to Earth Packed With Science and Cargo](https://www.nasa.gov/blogs/spacestation/2026/11/21/dragon-returns-to-earth-packed-with-science-and-cargo/) - NASA station, published 2026-11-21.\n\n- [The Stormy Southwest Pacific](https://science.nasa.gov/earth/earth-observatory/the-stormy-southwest-pacific/) - NASA, published 2026-11-20.\n\n## Mars\n\n- [NASA’s Curiosity Mars Rover Collects Samples](https://www.nasa.gov/image-article/nasas-curiosity-mars-rover-collects-samples/) - NASA, published 2026-11-20.\n\n## Neptune\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Mercury\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Venus\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Jupiter\n\n- [APOD: 2026 November 22 – Swirls and Colors on Jupiter from Juno](https://science.nasa.gov/image-article/apod-2026-november-22-swirls-and-colors-on-jupiter-from-juno/) - NASA, published 2026-11-22.\n\n## Saturn\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Uranus\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Moon\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Space\n\n- [65 Years of Human Spaceflight at NASA Johnson](https://www.nasa.gov/centers-and-facilities/johnson/65-years-of-human-spaceflight-at-nasa-johnson/) - NASA, published 2026-11-22.\n\n- [NASA Honor Awards Ceremony Recognizes Employees at Stennis Space Center](https://www.nasa.gov/centers-and-facilities/stennis/honor-awards-ceremony-at-stennis/) - NASA, published 2026-11-20.\n\n- [APOD: 2026 November 20 – V-G-R](https://science.nasa.gov/image-article/apod-2026-november-20-v-g-r/) - NASA, published 2026-11-20.\n\n- [NASA, SpaceX Prepare for Dragon Undocking as Science Packing Continues](https://www.nasa.gov/blogs/spacestation/2026/11/18/nasa-spacex-prepare-for-dragon-undocking-as-science-packing-continues/) - NASA station, published 2026-11-18.\n\n## Coverage note\nOne or more feeds were unavailable; this roundup has partial source coverage.",
+    "slug": "space-news-2026-11-24",
+    "title": "Daily Space News - 2026-11-24",
+    "excerpt": "6 recent, attributed space headlines, grouped by planet and mission topic.",
+    "content": "Daily space news desk for 2026-11-24 (America/New_York).\n\nAttributed headlines published within the last 48 hours. Follow each source for the full reporting; publication dates are not necessarily event dates.\n\n## Earth\n\n- [AGU Hyperwall Schedule](https://science.nasa.gov/earth/agu-hyperwall-schedule/) - NASA, published 2026-11-24.\n\n- [Eruption Extends Iwo Jima’s Beach](https://science.nasa.gov/earth/earth-observatory/eruption-extends-iwo-jimas-beach/) - NASA, published 2026-11-24.\n\n## Mars\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Neptune\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Mercury\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Venus\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Jupiter\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Saturn\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Uranus\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Moon\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Space\n\n- [NASA+ Content Coming to Big Screen at Greenbelt, Maryland Cinema](https://www.nasa.gov/nasa/nasa-content-coming-to-big-screen-at-greenbelt-maryland-cinema/) - NASA, published 2026-11-24.\n\n- [Teams Lock in Mission Architecture for NASA’s SR-1 Freedom](https://www.nasa.gov/general/nasa-locks-in-sr1-freedom-mission-architecture/) - NASA, published 2026-11-24.\n\n- [Amateur Astronomer? Be a Kilonova Catcher!](https://science.nasa.gov/get-involved/citizen-science/amateur-astronomer-be-a-kilonova-catcher/) - NASA, published 2026-11-24.\n\n- [NASA’s Northrop Grumman CRS-25 Mission Overview](https://www.nasa.gov/missions/station/nasas-northrop-grumman-crs-25-mission-overview/) - NASA, published 2026-11-24.\n\n## Coverage note\nOne or more feeds were unavailable; this roundup has partial source coverage.",
     "category": "nasa-news",
-    "date": "2026-11-22",
+    "date": "2026-11-24",
     "tags": [
       "Space news",
       "Earth",
-      "Jupiter",
-      "Mars",
       "Space"
     ],
     "sources": [
       {
-        "title": "Dragon Returns to Earth Packed With Science and Cargo",
-        "url": "https://www.nasa.gov/blogs/spacestation/2026/11/21/dragon-returns-to-earth-packed-with-science-and-cargo/",
-        "source": "NASA station",
-        "published": "2026-11-21T22:10:07+00:00",
+        "title": "AGU Hyperwall Schedule",
+        "url": "https://science.nasa.gov/earth/agu-hyperwall-schedule/",
+        "source": "NASA",
+        "published": "2026-11-24T18:55:42+00:00",
         "topic": "Earth"
       },
       {
-        "title": "The Stormy Southwest Pacific",
-        "url": "https://science.nasa.gov/earth/earth-observatory/the-stormy-southwest-pacific/",
+        "title": "Eruption Extends Iwo Jima’s Beach",
+        "url": "https://science.nasa.gov/earth/earth-observatory/eruption-extends-iwo-jimas-beach/",
         "source": "NASA",
-        "published": "2026-11-20T05:01:00+00:00",
+        "published": "2026-11-24T05:01:00+00:00",
         "topic": "Earth"
       },
       {
-        "title": "NASA’s Curiosity Mars Rover Collects Samples",
-        "url": "https://www.nasa.gov/image-article/nasas-curiosity-mars-rover-collects-samples/",
+        "title": "NASA+ Content Coming to Big Screen at Greenbelt, Maryland Cinema",
+        "url": "https://www.nasa.gov/nasa/nasa-content-coming-to-big-screen-at-greenbelt-maryland-cinema/",
         "source": "NASA",
-        "published": "2026-11-20T15:53:24+00:00",
-        "topic": "Mars"
-      },
-      {
-        "title": "APOD: 2026 November 22 – Swirls and Colors on Jupiter from Juno",
-        "url": "https://science.nasa.gov/image-article/apod-2026-november-22-swirls-and-colors-on-jupiter-from-juno/",
-        "source": "NASA",
-        "published": "2026-11-22T05:05:00+00:00",
-        "topic": "Jupiter"
-      },
-      {
-        "title": "65 Years of Human Spaceflight at NASA Johnson",
-        "url": "https://www.nasa.gov/centers-and-facilities/johnson/65-years-of-human-spaceflight-at-nasa-johnson/",
-        "source": "NASA",
-        "published": "2026-11-22T19:13:25+00:00",
+        "published": "2026-11-24T21:14:36+00:00",
         "topic": "Space"
       },
       {
-        "title": "NASA Honor Awards Ceremony Recognizes Employees at Stennis Space Center",
-        "url": "https://www.nasa.gov/centers-and-facilities/stennis/honor-awards-ceremony-at-stennis/",
+        "title": "Teams Lock in Mission Architecture for NASA’s SR-1 Freedom",
+        "url": "https://www.nasa.gov/general/nasa-locks-in-sr1-freedom-mission-architecture/",
         "source": "NASA",
-        "published": "2026-11-20T16:27:46+00:00",
+        "published": "2026-11-24T21:04:32+00:00",
         "topic": "Space"
       },
       {
-        "title": "APOD: 2026 November 20 – V-G-R",
-        "url": "https://science.nasa.gov/image-article/apod-2026-november-20-v-g-r/",
+        "title": "Amateur Astronomer? Be a Kilonova Catcher!",
+        "url": "https://science.nasa.gov/get-involved/citizen-science/amateur-astronomer-be-a-kilonova-catcher/",
         "source": "NASA",
-        "published": "2026-11-20T05:05:00+00:00",
+        "published": "2026-11-24T19:19:52+00:00",
         "topic": "Space"
       },
       {
-        "title": "NASA, SpaceX Prepare for Dragon Undocking as Science Packing Continues",
-        "url": "https://www.nasa.gov/blogs/spacestation/2026/11/18/nasa-spacex-prepare-for-dragon-undocking-as-science-packing-continues/",
-        "source": "NASA station",
-        "published": "2026-11-18T19:09:48+00:00",
-        "topic": "Space"
-      }
-    ]
-  },
-  {
-    "slug": "space-news-2026-11-21",
-    "title": "Daily Space News - 2026-11-21",
-    "excerpt": "5 recent, attributed space headlines, grouped by planet and mission topic.",
-    "content": "Daily space news desk for 2026-11-21 (America/New_York).\n\nAttributed headlines published within the last 48 hours. Follow each source for the full reporting; publication dates are not necessarily event dates.\n\n## Earth\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Mars\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Neptune\n\n- [APOD: 2026 November 21 – Voyager’s Neptune](https://science.nasa.gov/image-article/apod-2026-november-21-voyagers-neptune/) - NASA, published 2026-11-21.\n\n## Mercury\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Venus\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Jupiter\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Saturn\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Uranus\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Moon\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Space\n\n- [Curiosity Spots Drifting Twilight Clouds](https://science.nasa.gov/photojournal/curiosity-spots-drifting-twilight-clouds/) - NASA, published 2026-11-20.\n\n- [New NASA Seed Funding Primes Small Businesses for Innovation](https://www.nasa.gov/directorates/rtmd/new-nasa-seed-funding-primes-small-businesses-for-innovation/) - NASA, published 2026-11-20.\n\n- [Science and Suits Fill Schedule as Crew Preps for Cargo Missions](https://www.nasa.gov/blogs/spacestation/2026/11/19/science-and-suits-fill-schedule-as-crew-preps-for-cargo-missions/) - NASA station, published 2026-11-19.\n\n- [Challenge: Public Input on Life and the World in 2075](https://www.nasa.gov/directorates/stmd/prizes-challenges-crowdsourcing-program/center-of-excellence-for-collaborative-innovation-coeci/challenge-public-input-on-life-and-the-world-in-2075/) - NASA, published 2026-11-19.\n\n## Coverage note\nOne or more feeds were unavailable; this roundup has partial source coverage.",
-    "category": "nasa-news",
-    "date": "2026-11-21",
-    "tags": [
-      "Space news",
-      "Neptune",
-      "Space"
-    ],
-    "sources": [
-      {
-        "title": "APOD: 2026 November 21 – Voyager’s Neptune",
-        "url": "https://science.nasa.gov/image-article/apod-2026-november-21-voyagers-neptune/",
+        "title": "NASA’s Northrop Grumman CRS-25 Mission Overview",
+        "url": "https://www.nasa.gov/missions/station/nasas-northrop-grumman-crs-25-mission-overview/",
         "source": "NASA",
-        "published": "2026-11-21T05:05:00+00:00",
-        "topic": "Neptune"
-      },
-      {
-        "title": "Curiosity Spots Drifting Twilight Clouds",
-        "url": "https://science.nasa.gov/photojournal/curiosity-spots-drifting-twilight-clouds/",
-        "source": "NASA",
-        "published": "2026-11-20T22:27:05+00:00",
-        "topic": "Space"
-      },
-      {
-        "title": "New NASA Seed Funding Primes Small Businesses for Innovation",
-        "url": "https://www.nasa.gov/directorates/rtmd/new-nasa-seed-funding-primes-small-businesses-for-innovation/",
-        "source": "NASA",
-        "published": "2026-11-20T20:46:14+00:00",
-        "topic": "Space"
-      },
-      {
-        "title": "Science and Suits Fill Schedule as Crew Preps for Cargo Missions",
-        "url": "https://www.nasa.gov/blogs/spacestation/2026/11/19/science-and-suits-fill-schedule-as-crew-preps-for-cargo-missions/",
-        "source": "NASA station",
-        "published": "2026-11-19T21:02:23+00:00",
-        "topic": "Space"
-      },
-      {
-        "title": "Challenge: Public Input on Life and the World in 2075",
-        "url": "https://www.nasa.gov/directorates/stmd/prizes-challenges-crowdsourcing-program/center-of-excellence-for-collaborative-innovation-coeci/challenge-public-input-on-life-and-the-world-in-2075/",
-        "source": "NASA",
-        "published": "2026-11-19T19:34:20+00:00",
+        "published": "2026-11-24T19:09:16+00:00",
         "topic": "Space"
       }
     ]
