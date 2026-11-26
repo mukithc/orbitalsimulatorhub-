@@ -1,5 +1,55 @@
 [
   {
+    "slug": "space-news-2026-11-26",
+    "title": "Daily Space News - 2026-11-26",
+    "excerpt": "5 recent, attributed space headlines, grouped by planet and mission topic.",
+    "content": "Daily space news desk for 2026-11-26 (America/New_York).\n\nAttributed headlines published within the last 48 hours. Follow each source for the full reporting; publication dates are not necessarily event dates.\n\n## Earth\n\n- [Seeking Refuge on Resolution Island](https://science.nasa.gov/earth/earth-observatory/seeking-refuge-on-resolution-island/) - NASA, published 2026-11-26.\n\n## Mars\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Neptune\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Mercury\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Venus\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Jupiter\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Saturn\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Uranus\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Moon\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Space\n\n- [Progress Cargo Craft Docks to Station on Thanksgiving Day](https://www.nasa.gov/blogs/spacestation/2026/11/26/progress-cargo-craft-docks-to-station-on-thanksgiving-day/) - NASA station, published 2026-11-26.\n\n- [Progress Cargo Craft Approaching Station With Space Delivery](https://www.nasa.gov/blogs/spacestation/2026/11/26/progress-cargo-craft-approaching-station-with-space-delivery/) - NASA station, published 2026-11-26.\n\n- [APOD: 2026 November 26 – Eye in the Sky: The Milky Way over Lençóis](https://science.nasa.gov/image-article/apod-2026-november-26-eye-in-the-sky-the-milky-way-over-lencois/) - NASA, published 2026-11-26.\n\n- [Crew Works Biomedical Research Day Before Thanksgiving Space Delivery](https://www.nasa.gov/blogs/spacestation/2026/11/25/crew-works-biomedical-research-day-before-thanksgiving-space-delivery/) - NASA station, published 2026-11-25.\n\n## Coverage note\nOne or more feeds were unavailable; this roundup has partial source coverage.",
+    "category": "nasa-news",
+    "date": "2026-11-26",
+    "tags": [
+      "Space news",
+      "Earth",
+      "Space"
+    ],
+    "sources": [
+      {
+        "title": "Seeking Refuge on Resolution Island",
+        "url": "https://science.nasa.gov/earth/earth-observatory/seeking-refuge-on-resolution-island/",
+        "source": "NASA",
+        "published": "2026-11-26T05:01:00+00:00",
+        "topic": "Earth"
+      },
+      {
+        "title": "Progress Cargo Craft Docks to Station on Thanksgiving Day",
+        "url": "https://www.nasa.gov/blogs/spacestation/2026/11/26/progress-cargo-craft-docks-to-station-on-thanksgiving-day/",
+        "source": "NASA station",
+        "published": "2026-11-26T12:19:44+00:00",
+        "topic": "Space"
+      },
+      {
+        "title": "Progress Cargo Craft Approaching Station With Space Delivery",
+        "url": "https://www.nasa.gov/blogs/spacestation/2026/11/26/progress-cargo-craft-approaching-station-with-space-delivery/",
+        "source": "NASA station",
+        "published": "2026-11-26T11:32:37+00:00",
+        "topic": "Space"
+      },
+      {
+        "title": "APOD: 2026 November 26 – Eye in the Sky: The Milky Way over Lençóis",
+        "url": "https://science.nasa.gov/image-article/apod-2026-november-26-eye-in-the-sky-the-milky-way-over-lencois/",
+        "source": "NASA",
+        "published": "2026-11-26T05:05:00+00:00",
+        "topic": "Space"
+      },
+      {
+        "title": "Crew Works Biomedical Research Day Before Thanksgiving Space Delivery",
+        "url": "https://www.nasa.gov/blogs/spacestation/2026/11/25/crew-works-biomedical-research-day-before-thanksgiving-space-delivery/",
+        "source": "NASA station",
+        "published": "2026-11-25T16:17:32+00:00",
+        "topic": "Space"
+      }
+    ]
+  },
+  {
     "slug": "space-news-2026-11-25",
     "title": "Daily Space News - 2026-11-25",
     "excerpt": "5 recent, attributed space headlines, grouped by planet and mission topic.",
@@ -45,63 +95,6 @@
         "url": "https://www.nasa.gov/image-article/eye-of-the-sahara/",
         "source": "NASA",
         "published": "2026-11-25T16:21:04+00:00",
-        "topic": "Space"
-      }
-    ]
-  },
-  {
-    "slug": "space-news-2026-11-24",
-    "title": "Daily Space News - 2026-11-24",
-    "excerpt": "6 recent, attributed space headlines, grouped by planet and mission topic.",
-    "content": "Daily space news desk for 2026-11-24 (America/New_York).\n\nAttributed headlines published within the last 48 hours. Follow each source for the full reporting; publication dates are not necessarily event dates.\n\n## Earth\n\n- [AGU Hyperwall Schedule](https://science.nasa.gov/earth/agu-hyperwall-schedule/) - NASA, published 2026-11-24.\n\n- [Eruption Extends Iwo Jima’s Beach](https://science.nasa.gov/earth/earth-observatory/eruption-extends-iwo-jimas-beach/) - NASA, published 2026-11-24.\n\n## Mars\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Neptune\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Mercury\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Venus\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Jupiter\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Saturn\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Uranus\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Moon\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Space\n\n- [NASA+ Content Coming to Big Screen at Greenbelt, Maryland Cinema](https://www.nasa.gov/nasa/nasa-content-coming-to-big-screen-at-greenbelt-maryland-cinema/) - NASA, published 2026-11-24.\n\n- [Teams Lock in Mission Architecture for NASA’s SR-1 Freedom](https://www.nasa.gov/general/nasa-locks-in-sr1-freedom-mission-architecture/) - NASA, published 2026-11-24.\n\n- [Amateur Astronomer? Be a Kilonova Catcher!](https://science.nasa.gov/get-involved/citizen-science/amateur-astronomer-be-a-kilonova-catcher/) - NASA, published 2026-11-24.\n\n- [NASA’s Northrop Grumman CRS-25 Mission Overview](https://www.nasa.gov/missions/station/nasas-northrop-grumman-crs-25-mission-overview/) - NASA, published 2026-11-24.\n\n## Coverage note\nOne or more feeds were unavailable; this roundup has partial source coverage.",
-    "category": "nasa-news",
-    "date": "2026-11-24",
-    "tags": [
-      "Space news",
-      "Earth",
-      "Space"
-    ],
-    "sources": [
-      {
-        "title": "AGU Hyperwall Schedule",
-        "url": "https://science.nasa.gov/earth/agu-hyperwall-schedule/",
-        "source": "NASA",
-        "published": "2026-11-24T18:55:42+00:00",
-        "topic": "Earth"
-      },
-      {
-        "title": "Eruption Extends Iwo Jima’s Beach",
-        "url": "https://science.nasa.gov/earth/earth-observatory/eruption-extends-iwo-jimas-beach/",
-        "source": "NASA",
-        "published": "2026-11-24T05:01:00+00:00",
-        "topic": "Earth"
-      },
-      {
-        "title": "NASA+ Content Coming to Big Screen at Greenbelt, Maryland Cinema",
-        "url": "https://www.nasa.gov/nasa/nasa-content-coming-to-big-screen-at-greenbelt-maryland-cinema/",
-        "source": "NASA",
-        "published": "2026-11-24T21:14:36+00:00",
-        "topic": "Space"
-      },
-      {
-        "title": "Teams Lock in Mission Architecture for NASA’s SR-1 Freedom",
-        "url": "https://www.nasa.gov/general/nasa-locks-in-sr1-freedom-mission-architecture/",
-        "source": "NASA",
-        "published": "2026-11-24T21:04:32+00:00",
-        "topic": "Space"
-      },
-      {
-        "title": "Amateur Astronomer? Be a Kilonova Catcher!",
-        "url": "https://science.nasa.gov/get-involved/citizen-science/amateur-astronomer-be-a-kilonova-catcher/",
-        "source": "NASA",
-        "published": "2026-11-24T19:19:52+00:00",
-        "topic": "Space"
-      },
-      {
-        "title": "NASA’s Northrop Grumman CRS-25 Mission Overview",
-        "url": "https://www.nasa.gov/missions/station/nasas-northrop-grumman-crs-25-mission-overview/",
-        "source": "NASA",
-        "published": "2026-11-24T19:09:16+00:00",
         "topic": "Space"
       }
     ]
