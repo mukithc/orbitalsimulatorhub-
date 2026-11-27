@@ -1,5 +1,56 @@
 [
   {
+    "slug": "space-news-2026-11-27",
+    "title": "Daily Space News - 2026-11-27",
+    "excerpt": "5 recent, attributed space headlines, grouped by planet and mission topic.",
+    "content": "Daily space news desk for 2026-11-27 (America/New_York).\n\nAttributed headlines published within the last 48 hours. Follow each source for the full reporting; publication dates are not necessarily event dates.\n\n## Earth\n\n- [Shivelyuch Socked In](https://science.nasa.gov/earth/earth-observatory/shivelyuch-socked-in/) - NASA, published 2026-11-27.\n\n## Mars\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Neptune\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Mercury\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Venus\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Jupiter\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Saturn\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Uranus\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Moon\n\n- [APOD: 2026 November 27 – The Moon Watchers](https://science.nasa.gov/image-article/apod-2026-november-27-the-moon-watchers/) - NASA, published 2026-11-27.\n\n## Space\n\n- [NASA, Partners’ Preps on Track for Sunday Space Station Cargo Launch](https://www.nasa.gov/blogs/spacestation/2026/11/27/nasa-partners-preps-on-track-for-sunday-space-station-cargo-launch/) - NASA station, published 2026-11-27.\n\n- [Artemis III Astronaut Andre Douglas Visits VAB](https://www.nasa.gov/image-article/artemis-iii-astronaut-andre-douglas-visits-vab/) - NASA, published 2026-11-27.\n\n- [NASA’s NG-25 Mission to Launch Pioneering Space Crops Research](https://science.nasa.gov/science-research/biological-physical-sciences/nasas-ng-25-mission-to-launch-pioneering-space-crops-research/) - NASA, published 2026-11-27.\n\n## Coverage note\nOne or more feeds were unavailable; this roundup has partial source coverage.",
+    "category": "nasa-news",
+    "date": "2026-11-27",
+    "tags": [
+      "Space news",
+      "Earth",
+      "Moon",
+      "Space"
+    ],
+    "sources": [
+      {
+        "title": "Shivelyuch Socked In",
+        "url": "https://science.nasa.gov/earth/earth-observatory/shivelyuch-socked-in/",
+        "source": "NASA",
+        "published": "2026-11-27T05:01:00+00:00",
+        "topic": "Earth"
+      },
+      {
+        "title": "APOD: 2026 November 27 – The Moon Watchers",
+        "url": "https://science.nasa.gov/image-article/apod-2026-november-27-the-moon-watchers/",
+        "source": "NASA",
+        "published": "2026-11-27T05:05:00+00:00",
+        "topic": "Moon"
+      },
+      {
+        "title": "NASA, Partners’ Preps on Track for Sunday Space Station Cargo Launch",
+        "url": "https://www.nasa.gov/blogs/spacestation/2026/11/27/nasa-partners-preps-on-track-for-sunday-space-station-cargo-launch/",
+        "source": "NASA station",
+        "published": "2026-11-27T18:04:14+00:00",
+        "topic": "Space"
+      },
+      {
+        "title": "Artemis III Astronaut Andre Douglas Visits VAB",
+        "url": "https://www.nasa.gov/image-article/artemis-iii-astronaut-andre-douglas-visits-vab/",
+        "source": "NASA",
+        "published": "2026-11-27T15:01:00+00:00",
+        "topic": "Space"
+      },
+      {
+        "title": "NASA’s NG-25 Mission to Launch Pioneering Space Crops Research",
+        "url": "https://science.nasa.gov/science-research/biological-physical-sciences/nasas-ng-25-mission-to-launch-pioneering-space-crops-research/",
+        "source": "NASA",
+        "published": "2026-11-27T14:22:00+00:00",
+        "topic": "Space"
+      }
+    ]
+  },
+  {
     "slug": "space-news-2026-11-26",
     "title": "Daily Space News - 2026-11-26",
     "excerpt": "5 recent, attributed space headlines, grouped by planet and mission topic.",
@@ -45,56 +96,6 @@
         "url": "https://www.nasa.gov/blogs/spacestation/2026/11/25/crew-works-biomedical-research-day-before-thanksgiving-space-delivery/",
         "source": "NASA station",
         "published": "2026-11-25T16:17:32+00:00",
-        "topic": "Space"
-      }
-    ]
-  },
-  {
-    "slug": "space-news-2026-11-25",
-    "title": "Daily Space News - 2026-11-25",
-    "excerpt": "5 recent, attributed space headlines, grouped by planet and mission topic.",
-    "content": "Daily space news desk for 2026-11-25 (America/New_York).\n\nAttributed headlines published within the last 48 hours. Follow each source for the full reporting; publication dates are not necessarily event dates.\n\n## Earth\n\n- [Georgia’s Pecan Belt](https://science.nasa.gov/earth/earth-observatory/georgias-pecan-belt/) - NASA, published 2026-11-25.\n\n## Mars\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Neptune\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Mercury\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Venus\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Jupiter\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Saturn\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Uranus\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Moon\n\nNo new eligible headline found in the checked feeds for this topic today.\n\n## Space\n\n- [NASA Enhances Supplier Program, Announces Mentor-Protégé Agreement](https://www.nasa.gov/organizations/osbp/nasa-enhances-supplier-program-announces-mentor-protege-agreement/) - NASA, published 2026-11-25.\n\n- [NASA Eyes Crop Candidates for Future Menus](https://science.nasa.gov/directorates/smd/nasa-eyes-crop-candidates-for-future-menus/) - NASA, published 2026-11-25.\n\n- [Childhood, Career Come Full Circle for Budget Analyst at NASA Goddard](https://www.nasa.gov/centers-and-facilities/goddard/childhood-career-come-full-circle-for-budget-analyst-at-nasa-goddard/) - NASA, published 2026-11-25.\n\n- [Eye of the Sahara](https://www.nasa.gov/image-article/eye-of-the-sahara/) - NASA, published 2026-11-25.\n\n## Coverage note\nOne or more feeds were unavailable; this roundup has partial source coverage.",
-    "category": "nasa-news",
-    "date": "2026-11-25",
-    "tags": [
-      "Space news",
-      "Earth",
-      "Space"
-    ],
-    "sources": [
-      {
-        "title": "Georgia’s Pecan Belt",
-        "url": "https://science.nasa.gov/earth/earth-observatory/georgias-pecan-belt/",
-        "source": "NASA",
-        "published": "2026-11-25T05:00:00+00:00",
-        "topic": "Earth"
-      },
-      {
-        "title": "NASA Enhances Supplier Program, Announces Mentor-Protégé Agreement",
-        "url": "https://www.nasa.gov/organizations/osbp/nasa-enhances-supplier-program-announces-mentor-protege-agreement/",
-        "source": "NASA",
-        "published": "2026-11-25T19:06:56+00:00",
-        "topic": "Space"
-      },
-      {
-        "title": "NASA Eyes Crop Candidates for Future Menus",
-        "url": "https://science.nasa.gov/directorates/smd/nasa-eyes-crop-candidates-for-future-menus/",
-        "source": "NASA",
-        "published": "2026-11-25T17:53:42+00:00",
-        "topic": "Space"
-      },
-      {
-        "title": "Childhood, Career Come Full Circle for Budget Analyst at NASA Goddard",
-        "url": "https://www.nasa.gov/centers-and-facilities/goddard/childhood-career-come-full-circle-for-budget-analyst-at-nasa-goddard/",
-        "source": "NASA",
-        "published": "2026-11-25T16:47:29+00:00",
-        "topic": "Space"
-      },
-      {
-        "title": "Eye of the Sahara",
-        "url": "https://www.nasa.gov/image-article/eye-of-the-sahara/",
-        "source": "NASA",
-        "published": "2026-11-25T16:21:04+00:00",
         "topic": "Space"
       }
     ]
